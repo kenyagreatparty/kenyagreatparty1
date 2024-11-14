@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenya Great Party (KGP) - Official Website</title>
+    <!-- Favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Kenya Great Party - Building a Brighter Future for Kenya" />
+
+    <!-- fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Module css -->
+    <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        :root {
+            --thm-base: #ADD8E6;
+            --thm-base-rgb: 173, 216, 230;
+        }
+        .floating-header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 91.66%;
+            max-width: 1024px;
+            z-index: 1030;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header.scrolled .navbar {
+            padding: 0.25rem 1rem;
+        }
+        .logo-circle {
+            left: -5px;
+            top: 2px;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        @media (max-width: 767.98px) {
+            .floating-header .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            .floating-header .navbar-collapse.show {
+                max-height: 256px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Start Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader">
+            <div class="preloader-close">x</div>
+            <div id="handle-preloader" class="handle-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"><img class="ms-20 df" src="./assets/images/favicons/kgp2-rotated.png" alt="KGP Logo" height="130"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="k" class="letters-loading">
+                            k
+                        </span>
+                        <span data-text-preloader="e" class="letters-loading">
+                            e
+                        </span>
+                        <span data-text-preloader="n" class="letters-loading">
+                            n
+                        </span>
+                        <span data-text-preloader="y" class="letters-loading">
+                            y
+                        </span>
+                        <span data-text-preloader="a" class="letters-loading">
+                            a
+                        </span>
+                        <span>
+                          
+                        </span>
+                        <span data-text-preloader="g" class="letters-loading">
+                            g
+                        </span>
+                        <span data-text-preloader="r" class="letters-loading">
+                            r
+                        </span>
+                        <span data-text-preloader="e" class="letters-loading">
+                            e
+                        </span>
+                        <span data-text-preloader="a" class="letters-loading">
+                            a
+                        </span>
+                        <span data-text-preloader="t" class="letters-loading">
+                            t
+                        </span>
+                        <span>
+                          
+                        </span>
+                        <span data-text-preloader="p" class="letters-loading">
+                            p
+                        </span>
+                        <span data-text-preloader="a" class="letters-loading">
+                            a
+                        </span>
+                        <span data-text-preloader="r" class="letters-loading">
+                            r
+                        </span>
+                        <span data-text-preloader="t" class="letters-loading">
+                            t
+                        </span>
+                        <span data-text-preloader="y" class="letters-loading">
+                            y
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <div class="page-wrapper">
+        <!--Start Main Header One-->
+        <header class="floating-header">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <div class="logo-circle me-2">
+                            <img class="ms-20 df" src="./assets/images/favicons/kgp2-upright.png" alt="KGP Logo" height="180">
+                        </div>
+                        <span class="d-none d-md-inline ms-4">Kenya Great Party</span>
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Us
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                    <li><a class="dropdown-item" href="about.html#history">History</a></li>
+                                    <li><a class="dropdown-item" href="about.html#values">Values</a></li>
+                                    <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    News
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                    <li><a class="dropdown-item" href="news.html#events">Events</a></li>
+                                    <li><a class="dropdown-item" href="news.html#notices">Notices</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Downloads
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                    <li><a class="dropdown-item" href="downloads.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="downloads.html#tenders">Tenders</a></li>
+                                    <li><a class="dropdown-item" href="downloads.html#financial-statements">Financial Statements</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <a href="join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        <span class="ms-2">Join KGP</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <!--End Main Header One-->
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Start Main Slider -->
+        <section class="main-slider main-slider-one">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                "delay": 5000
+                }}'>
+                <div class="swiper-wrapper">
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slides/slide-v1-1.jpg);">
+                        </div>
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__content">
+                                        <div class="title">
+                                            <h2>Building a <br> Brighter <span>Future</span> <br>for Kenya</h2>
+                                        </div>
+                                        <div class="text">
+                                            <p>Join us in our mission to create a prosperous and united Kenya <br> through visionary leadership and inclusive policies.</p>
+                                        </div>
+                                        <div class="btn-box">
+                                            <a class="btn-one" href="#">
+                                                <span class="txt">Learn More</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slides/slide-v1-2.jpg);">
+                        </div>
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__content">
+                                        <div class="title">
+                                            <h2>Empowering <br> Kenyans for a <span>Better</span> <br>Tomorrow</h2>
+                                        </div>
+                                        <div class="text">
+                                            <p>KGP is committed to creating opportunities and improving lives <br> across all sectors of our society.</p>
+                                        </div>
+                                        <div class="btn-box">
+                                            <a class="btn-one" href="#">
+                                                <span class="txt">Join Our Cause</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                        <i class="icon-left-arrow"></i>
+                    </div>
+                    <div  class="swiper-button-next" id="main-slider__swiper-button-prev">
+                        <i class="icon-right-arrow"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--End Main Slider-->
+
+        <!--Start Features Style1-->
+        <section class="features-style1">
+            <div class="shape1 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="3500ms"></div>
+            <div class="shape2"><img src="assets/images/shapes/features-v1-shape1.png" alt="#"></div>
+            <div class="auto-container">
+                <div class="features-style1__inner">
+                    <div class="row">
+                        <!--Start Features Style1 Single-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="features-style1__single">
+                                <div class="features-style1__single-icon">
+                                    <span class="icon-growth"><i class="fas fa-chart-line" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
+                                </div>
+
+                                <div class="features-style1__single-content">
+                                    <h3><a href="#">Economic Growth</a></h3>
+                                    <p>We aim to boost Kenya's economy through sustainable development and job creation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Features Style1 Single-->
+
+                        <!--Start Features Style1 Single-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms"
+                            data-wow-duration="1500ms">
+                            <div class="features-style1__single">
+                                <div class="features-style1__single-icon">
+                                    <span class="icon-mortarboard"><i class="fas fa-mortar-board" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
+                                </div>
+
+                                <div class="features-style1__single-content">
+                                    <h3><a href="#">Education for All</a></h3>
+                                    <p>Ensuring quality education and skills training for every Kenyan citizen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Features Style1 Single-->
+
+                        <!--Start Features Style1 Single-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms"
+                            data-wow-duration="1500ms">
+                            <div class="features-style1__single">
+                                <div class="features-style1__single-icon">
+                                    <span class="icon-stethoscope"><i class="fas fa-stethoscope" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
+                                </div>
+
+                                <div class="features-style1__single-content">
+                                    <h3><a href="#">Healthcare Reform</a></h3>
+                                    <p>Improving access to quality healthcare services across the nation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Features Style1 Single-->
+
+                        <!--Start Features Style1 Single-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="features-style1__single">
+                                <div class="features-style1__single-icon">
+                                    <span class=""><i class="fas fa-leaf" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
+                                </div>
+                                <div class="features-style1__single-content">
+                                    <h3><a href="#">Environmental Conservation</a></h3>
+                                    <p>Protecting Kenya's natural resources and promoting sustainable practices.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Features Style1 Single-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Features Style1-->
+
+        <!--Start About Style1-->
+        <section class="about-style1">
+            <div class="auto-container">
+                <div class="row">
+
+                    <div class="col-xl-6">
+                        <div class="about-style1__content">
+                            <div class="sec-title">
+                                <div class="sub-title">
+                                    <h6>About Party Leader</h6>
+                                </div>
+                                <h2>Meet Our <span>Visionary</span> <br> Leader for Kenya's <br>Future</h2>
+                            </div>
+                            <div class="about-style1__content-text">
+                                <p>Our party leader is committed to driving positive change in Kenya. With years of experience in public service and a deep understanding of our nation's challenges, they are dedicated to uniting Kenyans and working towards a prosperous future for all.</p>
+                            </div>
+                            <div class="about-style1__content-signature">
+                                <img src="assets/images/resources/about-v1-signature.png" alt="#">
+                            </div>
+                            <ul class="about-style1__content-list">
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Proven track record of leadership</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Commitment to transparency and accountability</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Vision for a united and prosperous Kenya</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="about-style1__content-btn">
+                                <a class="btn-one" href="about.html">
+                                    <span class="txt">Learn More</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="about-style1__img">
+                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/thm-shape1.png" alt="#">
+                            </div>
+                            <div class="shape2 rotate-m"><img src="assets/images/shapes/thm-shape1.png" alt="#"></div>
+                            <div class="shape3"></div>
+                            <div class="about-style1__img-inner">
+                                <img src="assets/images/about/about-v1-img1.png" alt="#">
+                            </div>
+                            <div class="experience-box text-center">
+                                <h2>
+                                    <span class="odometer" data-count="10">00</span>
+                                </h2>
+                                <div class="title">
+                                    <h3> Years Of <br> Experience</h3>
+                                </div>
+                            </div>
+
+                            <div class="about-style1__img-client-info">
+                                <h3>David Master</h3>
+                                <p>KGP Party Leader</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End About Style1-->
+
+        <!--Start Services Style1-->
+        <section class="services-style1">
+            <div class="shape1"></div>
+            <div class="shape2 rotate-m"><img src="assets/images/shapes/services-v1-shape1.png" alt="#"></div>
+            <div class="shape3 float-bob-y"><img src="assets/images/shapes/services-v1-shape2.png" alt="#"></div>
+            <div class="shape4"><img src="assets/images/shapes/services-v1-shape3.png" alt="#"></div>
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>OUR FOCUS AREAS</h6>
+                    </div>
+                    <h2>Key Initiatives for a <br>Better Kenya</h2>
+                </div>
+                <div class="row">
+                    <!--Start Services Style1 Single-->
+                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInLeft" data-wow-delay="0ms"
+                        data-wow-duration="1000ms">
+                        <div class="services-style1__single">
+                            <div class="services-style1__single-content text-center">
+                                <div class="services-style1__single-icon">
+                                    <span class="icon-Group-5"></span>
+                                </div>
+                                <div class="services-style1__single-text">
+                                    <h3><a href="departments-details.html">Economic <br> Development</a></h3>
+                                    <div class="btn-box">
+                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Services Style1 Single-->
+
+                    <!--Start Services Style1 Single-->
+                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInLeft" data-wow-delay="100ms"
+                        data-wow-duration="1000ms">
+                        <div class="services-style1__single">
+                            <div class="services-style1__single-content text-center">
+                                <div class="services-style1__single-icon">
+                                    <span class="icon-Group-6"></span>
+                                </div>
+                                <div class="services-style1__single-text">
+                                    <h3><a href="departments-details.html">Education <br> Reform</a></h3>
+                                    <div class="btn-box">
+                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Services Style1 Single-->
+
+                    <!--Start Services Style1 Single-->
+                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0ms"
+                        data-wow-duration="1000ms">
+                        <div class="services-style1__single">
+                            <div class="services-style1__single-content text-center">
+                                <div class="services-style1__single-icon">
+                                    <span class="icon-Group-7"></span>
+                                </div>
+                                <div class="services-style1__single-text">
+                                    <h3><a href="departments-details.html">Healthcare <br> Improvement</a></h3>
+                                    <div class="btn-box">
+                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Services Style1 Single-->
+
+                    <!--Start Services Style1 Single-->
+                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="100ms"
+                        data-wow-duration="1000ms">
+                        <div class="services-style1__single">
+                            <div class="services-style1__single-content text-center">
+                                <div class="services-style1__single-icon">
+                                    <span class="icon-Group-16"></span>
+                                </div>
+                                <div class="services-style1__single-text">
+                                    <h3><a href="departments-details.html">Environmental <br> Conservation</a></h3>
+                                    <div class="btn-box">
+                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Services Style1 Single-->
+                </div>
+            </div>
+        </section>
+        <!--End Services Style1-->
+
+        <!--Start Testimonials Style1-->
+        <section class="testimonials-style1">
+            <div class="shape1"></div>
+            <div class="shape2 rotate-m"><img src="assets/images/shapes/services-v1-shape1.png" alt=""></div>
+            <div class="shape3 wow slideInRight" data-wow-delay="500ms" data-wow-duration="2500ms"><img
+                    class="float-bob-y" src="assets/images/shapes/testimonials-v1-shape2.png" alt=""></div>
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>Testimonials</h6>
+                    </div>
+                    <h2>What Kenyans Say About <br>Kenya Great Party</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="testimonials-style1__inner">
+                            <div class="owl-carousel owl-theme thm-owl__carousel testimonial-carousel-one"
+                                data-owl-options='{
+                                "loop": true,
+                                "autoplay": true,
+                                "margin": 30,
+                                "nav": false,
+                                "dots": false,
+                                "smartSpeed": 500,
+                                "autoplayTimeout": 10000,
+                                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                                "responsive": {
+                                        "0": {
+                                            "items": 1
+                                        },
+                                        "768": {
+                                            "items": 2
+                                        },
+                                        "992": {
+                                            "items": 2
+                                        },
+                                        "1200": {
+                                            "items": 3
+                                        }
+                                    }
+                                }'>
+
+                                <!--Start Testimonials Style1 Single-->
+                                <div class="testimonials-style1__single">
+                                    <div class="testimonials-style1__single-content">
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text">
+                                            <p>"KGP's commitment to education has opened new opportunities for our youth. Their policies are making a real difference in our communities."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonials-style1__single-client-info">
+                                        <div class="img-box">
+                                            <img src="assets/images/testimonial/testimonial-v1-1.jpg" alt="#">
+                                        </div>
+
+                                        <div class="text-box">
+                                            <h3>phyliss mutheu</h3>
+                                            <p>Teacher</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Testimonials Style1 Single-->
+
+                                <!--Start Testimonials Style1 Single-->
+                                <div class="testimonials-style1__single">
+                                    <div class="testimonials-style1__single-content">
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text">
+                                            <p>"The economic policies of KGP have created new opportunities for small businesses like mine. They truly understand our needs and challenges."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonials-style1__single-client-info">
+                                        <div class="img-box">
+                                            <img src="assets/images/testimonial/testimonial-v1-2.jpg" alt="#">
+                                        </div>
+
+                                        <div class="text-box">
+                                            <h3>John Kamau</h3>
+                                            <p>Small Business Owner</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Testimonials Style1 Single-->
+
+                                <!--Start Testimonials Style1 Single-->
+                                <div class="testimonials-style1__single">
+                                    <div class="testimonials-style1__single-content">
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text">
+                                            <p>"I've seen real improvements in healthcare since KGP took office. Their focus on improving medical services is making a difference in people's lives."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonials-style1__single-client-info">
+                                        <div class="img-box">
+                                            <img src="assets/images/testimonial/testimonial-v1-3.jpg" alt="#">
+                                        </div>
+
+                                        <div class="text-box">
+                                            <h3>David Mutua</h3>
+                                            <p>Healthcare Worker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Testimonials Style1 Single-->
+
+                                <!--Start Testimonials Style1 Single-->
+                                <div class="testimonials-style1__single">
+                                    <div class="testimonials-style1__single-content">
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text">
+                                            <p>"KGP's emphasis on supporting small businesses, including salons, is creating jobs and enhancing the financial well-being of our community."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonials-style1__single-client-info">
+                                        <div class="img-box">
+                                            <img src="assets/images/testimonial/testimonial-v3-2.jpg" alt="#">
+                                        </div>
+
+                                        <div class="text-box">
+                                            <h3>Pauline Atieno</h3>
+                                            <p>Salonist</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Testimonials Style1 Single-->
+
+                                <!--Start Testimonials Style1 Single-->
+                                <div class="testimonials-style1__single">
+                                    <div class="testimonials-style1__single-content">
+                                        <div class="rating-box">
+                                            <ul>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-pointed-star"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text">
+                                            <p>"I’ve witnessed significant changes in our community. Their commitment to enhancing education and skills training is empowering every Kenyan citizen."</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="testimonials-style1__single-client-info">
+                                        <div class="img-box">
+                                            <img src="assets/images/testimonial/testimonial-v3-img1.png" alt="#">
+                                        </div>
+
+                                        <div class="text-box">
+                                            <h3>Brandon Mulamwah</h3>
+                                            <p>Student Uon</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Testimonials Style1 Single-->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Testimonials Style1-->
+
+
+        <!--Start Events Style1-->
+        <section class="events-style1">
+            <div class="events-style1__bg" style="background-image: url(assets/images/backgrounds/events-v1-bg.png);">
+            </div>
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>Upcoming Events</h6>
+                    </div>
+                    <h2>Join Us in Shaping <br>Kenya's Future</h2>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="events-style1__inner">
+                            <!--Start Events Style1 Single-->
+                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.1s">
+                                <div class="events-style1__single-left">
+                                    <div class="img-box">
+                                        <img src="assets/images/resources/events-v1-img1.jpg" alt="#">
+                                    </div>
+                                    <div class="title">
+                                        <h2><a href="event-details.html">KGP Youth Summit: <br> Empowering Tomorrow's Leaders</a>
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <div class="events-style1__single__right">
+                                    <ul class="contact-info">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-wall-clock"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>09:00 AM - 05:00 PM</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Nairobi, Kenya</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="events-style1__single__right-btn">
+                                        <a class="btn-one" href="event-details.html">
+                                            <span class="txt">Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Events Style1 Single-->
+
+                            <!--Start Events Style1 Single-->
+                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.2s">
+                                <div class="events-style1__single-left">
+                                    <div class="img-box">
+                                        <img src="assets/images/resources/events-v1-img2.jpg" alt="#">
+                                    </div>
+                                    <div class="title">
+                                        <h2><a href="event-details.html">Economic Forum: <br> Building a Prosperous Kenya</a></h2>
+                                    </div>
+                                </div>
+
+                                <div class="events-style1__single__right">
+                                    <ul class="contact-info">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-wall-clock"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>10:00 AM - 04:00 PM</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Mombasa, Kenya</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="events-style1__single__right-btn">
+                                        <a class="btn-one" href="event-details.html">
+                                            <span class="txt">Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Events Style1 Single-->
+
+                            <!--Start Events Style1 Single-->
+                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.3s">
+                                <div class="events-style1__single-left">
+                                    <div class="img-box">
+                                        <img src="assets/images/resources/events-v1-img3.jpg" alt="#">
+                                    </div>
+                                    <div class="title">
+                                        <h2><a href="event-details.html">Healthcare Symposium: <br> Advancing Medical Care in Kenya</a></h2>
+                                    </div>
+                                </div>
+
+                                <div class="events-style1__single__right">
+                                    <ul class="contact-info">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-wall-clock"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>08:30 AM - 03:30 PM</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>Kisumu, Kenya</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="events-style1__single__right-btn">
+                                        <a class="btn-one" href="event-details.html">
+                                            <span class="txt">Read More</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Events Style1 Single-->
+                            <div class="events-style1__btn text-center">
+                                <a class="btn-one" href="events.html">
+                                    <span class="txt">View All Events</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Events Style1-->
+
+        <!--Start Blog Style1-->
+        <section class="blog-style1">
+            <div class="shape1"><img src="assets/images/shapes/blog-v1-shape1.png" alt="#"></div>
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>Latest News</h6>
+                    </div>
+                    <h2>Stay Informed with KGP's <br> Latest Updates</h2>
+                </div>
+                <div class="row">
+                    <!--Start Blog Style1 Single-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp  h-100" data-wow-delay=".3s">
+                        <div class="blog-style1__single">
+                            <div class="blog-style1__single-img">
+                                <img src="assets/images/blog/blog-v1-1.jpg" alt="#">
+                            </div>
+
+                            <div class="blog-style1__single-content">
+                                <div class="date-box">
+                                    <p> <span class="icon-calendar"></span> Oct 20, 2024</p>
+                                </div>
+                                <h2><a href="blog-details.html">KGP Launches New Education Initiative</a>
+                                </h2>
+                                <ul class="meta-box">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-user"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">Admin</a></p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-comment"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">2 Comments</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="text">
+                                    <p>Our party introduces a comprehensive plan to improve access to quality education across Kenya.</p>
+                                </div>
+                                <div class="blog-style1__single-conten-btn">
+                                    <a class="btn-one" href="blog-details.html">
+                                        <span class="txt">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Blog Style1 Single-->
+
+                    <!--Start Blog Style1 Single-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInDown  h-100" data-wow-delay=".3s">
+                        <div class="blog-style1__single">
+                            <div class="blog-style1__single-img">
+                                <img src="assets/images/blog/blog-v1-2.jpg" alt="#">
+                            </div>
+
+                            <div class="blog-style1__single-content">
+                                <div class="date-box">
+                                    <p> <span class="icon-calendar"></span> Oct 18, 2024</p>
+                                </div>
+                                <h2><a href="blog-details.html">Economic Growth Surges Under KGP Policies</a></h2>
+                                <ul class="meta-box">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-user"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">Admin</a></p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-comment"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">4 Comments</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="text">
+                                    <p>Recent reports show significant improvements in Kenya's economic indicators following KGP's reforms.</p>
+                                </div>
+                                <div class="blog-style1__single-conten-btn">
+                                    <a class="btn-one" href="blog-details.html">
+                                        <span class="txt">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Blog Style1 Single-->
+
+                    <!--Start Blog Style1 Single-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp  h-100" data-wow-delay=".3s">
+                        <div class="blog-style1__single">
+                            <div class="blog-style1__single-img">
+                                <img src="assets/images/blog/blog-v1-3.jpg" alt="#">
+                            </div>
+
+                            <div class="blog-style1__single-content">
+                                <div class="date-box">
+                                    <p> <span class="icon-calendar"></span> Oct 15, 2024</p>
+                                </div>
+                                <h2><a href="blog-details.html">KGP Hosts National Unity Conference</a>
+                                </h2>
+                                <ul class="meta-box">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-user"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">Admin</a></p>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-comment"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="#">1 Comment</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="text">
+                                    <p>Leaders from across Kenya gather to discuss strategies for promoting national unity and cohesion.</p>
+                                </div>
+                                <div class="blog-style1__single-conten-btn">
+                                    <a class="btn-one" href="blog-details.html">
+                                        <span class="txt">Read More</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Blog Style1 Single-->
+                </div>
+            </div>
+        </section>
+        <!--End Blog Style1-->
+
+        <!--Start Team Style1-->
+        <section class="team-style1">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>Party Officials</h6>
+                    </div>
+                    <h2>Meet KGP Party<br> Officials</h2>
+                </div>
+                <div class="row">
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img1.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Halima Hassan</a></h2>
+                                    <p>Sectetary General</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img2.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Kimani Williams</a></h2>
+                                    <p>National Treasurer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img3.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Silvya Anyango</a></h2>
+                                    <p>National Chairman</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img4.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Brendan Wafula</a></h2>
+                                    <p>Leader Operations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+                </div>
+            </div>
+        </section>
+
+        <!--Start footer area -->
+        <footer class="footer-area">
+            <div class="footer-area__shape1">
+                <img src="assets/images/shapes/footer-v1-shape1.png" alt="#">
+            </div>
+            <!--Start Footer-->
+            <div class="footer">
+                <div class="auto-container">
+                    <div class="row">
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.1s">
+                            <div class="single-footer-widget">
+                                <div class="our-company-info">
+                                    <div class="footer-logo-style1">
+                                        <a href="index.html">
+                                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" title="" width="100">
+                                        </a>
+                                    </div>
+                                    <div class="our-company-info__text">
+                                        <p>Kenya Great Party (KGP) is committed to building a brighter future for all Kenyans through visionary leadership and inclusive policies.</p>
+                                    </div>
+                                    <ul class="our-company-info__social-link">
+                                        <li>
+                                            <a href="#"><span class="icon-facebook-app-symbol"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-twitter"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-instagram"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.3s">
+                            <div class="single-footer-widget single-footer-widget--explore">
+                                <div class="title">
+                                    <h3>Explore</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="#">About KGP</a></li>
+                                        <li><a href="#">Our Manifesto</a></li>
+                                        <li><a href="#">Leadership Team</a></li>
+                                        <li><a href="#">News & Updates</a></li>
+                                        <li><a href="#">Get Involved</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.5s">
+                            <div class="single-footer-widget single-footer-widget--links">
+                                <div class="title">
+                                    <h3>Useful Links</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="#">Volunteer</a></li>
+                                        <li><a href="#">Donate</a></li>
+                                        <li><a href="#">Events Calendar</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.7s">
+                            <div class="single-footer-widget footer-widget--contact">
+                                <div class="title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="footer-widget--contact-info">
+                                    <div class="footer-widget--contact-info-text">
+                                        <p>Get in touch with us for any inquiries or support.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>KGP Headquarters, Nairobi, Kenya</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-mail-1"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:info@kenyagreatparty.com">info@kenyagreatparty.com</a></p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-telephone"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:+254123456789">+254 729554475</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                    </div>
+                </div>
+            </div>
+            <!--End Footer-->
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="bottom-inner text-center">
+                        <div class="copyright">
+                            <p>&copy; 2024 Kenya Great Party. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!--End footer area-->
+
+    </div>
+    <!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler">
+                <i class="icon-plus"></i>
+            </span>
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" width="80" />
+                </a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@kenyagreatparty.com">info@kenyagreatparty.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+254123456789">+254 729554475</a>
+                </li>
+            </ul>
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label>
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <i class="icon-down-arrow"></i>
+    </a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/parallax/parallax.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/timepicker/timePicker.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/typed-2.0.11/typed-2.0.11.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+
+    <!-- Template js -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.floating-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
