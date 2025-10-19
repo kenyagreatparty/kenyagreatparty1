@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Kenya Great Party (KGP) - Building a Brighter Future Together</title>
+    <!-- Favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Join Kenya Great Party - Be Part of the Change" />
+
+    <!-- fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Module css -->
+    <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/09-breadcrumb-section.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        :root {
+            --thm-base: #ADD8E6;
+            --thm-base-rgb: 173, 216, 230;
+        }
+        .floating-header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 91.66%;
+            max-width: 1024px;
+            z-index: 1030;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header.scrolled .navbar {
+            padding: 0.25rem 1rem;
+        }
+        .logo-circle {
+            left: -5px;
+            top: 2px;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        @media (max-width: 767.98px) {
+            .floating-header .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            .floating-header .navbar-collapse.show {
+                max-height: 256px;
+            }
+        }
+        .join-form {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .join-form h2 {
+            color: var(--thm-base);
+            margin-bottom: 20px;
+        }
+        .join-form .form-control {
+            border-radius: 5px;
+        }
+        .join-form .btn-primary {
+            background-color: var(--thm-base);
+            border-color: var(--thm-base);
+        }
+        .join-form .btn-primary:hover {
+            background-color: #8CC0D0;
+            border-color: #8CC0D0;
+        }
+        .loading {
+            display: none;
+        }
+        .loading.show {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader">
+            <div class="preloader-close">x</div>
+            <div id="handle-preloader" class="handle-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"><img class="ms-20 df" src="./assets/images/favicons/kgp2-rotated.png" alt="KGP Logo" height="130"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="k" class="letters-loading">k</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="n" class="letters-loading">n</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="g" class="letters-loading">g</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span data-text-preloader="p" class="letters-loading">p</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <div class="page-wrapper">
+        <!--Start Main Header One-->
+        <header class="floating-header">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        <div class="logo-circle me-2">
+                            <img class="ms-20 df" src="./assets/images/favicons/kgp2-upright.png" alt="KGP Logo" height="180">
+                        </div>
+                        <span class="d-none d-md-inline ms-4">Kenya Great Party</span>
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Us
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                    <li><a class="dropdown-item" href="/about.html#history">History</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#values">Values</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#team">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    News
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                    <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Downloads
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                    <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        <span class="ms-2">Join KGP</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <!--End Main Header One-->
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Start Breadcrumb Style1-->
+        <section class="breadcrumb-style1">
+            <div class="breadcrumb-style1__bg"
+                style="background-image: url(assets/images/backgrounds/breadcrumb-v1-bg.jpg);"></div>
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-style1__inner text-center">
+                            <h2>Join KGP</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb-style1__bottom">
+                <div class="auto-container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="breadcrumb-style1__bottom-menu">
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                    <li>Join KGP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Breadcrumb Style1-->
+
+        <!--Start Join KGP Section-->
+        <section class="join-kgp-section">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="join-kgp-content">
+                            <div class="sec-title">
+                                <div class="sub-title">
+                                    <h6>Become a Member</h6>
+                                </div>
+                                <h2>Join the Movement for a Better Kenya</h2>
+                            </div>
+                            <div class="text">
+                                <p>By joining the Kenya Great Party, you're taking an active role in shaping the future of our nation. Together, we can build a more prosperous, just, and united Kenya for all.</p>
+                            </div>
+                            <ul class="join-benefits">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Participate in policy-making processes</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Network with like-minded individuals</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-check"></span>
+                                    </div>
+                                    <div class="text">
+                                        <p>Contribute to community development projects</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="join-form">
+                            <h2>Membership Application</h2>
+                            <form id="membership-form" action="#" method="post">
+                                <!-- Personal Information Section -->
+                                <h5 class="mb-3 text-primary">Personal Information</h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="surname" class="form-label">Surname *</label>
+                                        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="otherNames" class="form-label">Other Names *</label>
+                                        <input type="text" class="form-control" name="otherNames" id="otherNames" placeholder="Other Names" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="sex" class="form-label">Sex *</label>
+                                        <select class="form-select" name="sex" id="sex" required>
+                                            <option value="">Select Sex</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="dateOfBirth" class="form-label">Date of Birth *</label>
+                                        <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="ethnicity" class="form-label">Ethnicity *</label>
+                                        <select class="form-select" name="ethnicity" id="ethnicity" required>
+                                            <option value="">Select Ethnicity</option>
+                                            <option value="kikuyu">Kikuyu</option>
+                                            <option value="luhya">Luhya</option>
+                                            <option value="kalenjin">Kalenjin</option>
+                                            <option value="luo">Luo</option>
+                                            <option value="kamba">Kamba</option>
+                                            <option value="kisii">Kisii</option>
+                                            <option value="meru">Meru</option>
+                                            <option value="mijikenda">Mijikenda</option>
+                                            <option value="maasai">Maasai</option>
+                                            <option value="turkana">Turkana</option>
+                                            <option value="samburu">Samburu</option>
+                                            <option value="pokot">Pokot</option>
+                                            <option value="somali">Somali</option>
+                                            <option value="borana">Borana</option>
+                                            <option value="rendille">Rendille</option>
+                                            <option value="gabbra">Gabbra</option>
+                                            <option value="oromo">Oromo</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="religion" class="form-label">Religion *</label>
+                                        <select class="form-select" name="religion" id="religion" required>
+                                            <option value="">Select Religion</option>
+                                            <option value="christianity">Christianity</option>
+                                            <option value="islam">Islam</option>
+                                            <option value="hinduism">Hinduism</option>
+                                            <option value="traditional">Traditional African Religion</option>
+                                            <option value="other">Other</option>
+                                            <option value="none">None</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Information Section -->
+                                <h5 class="mb-3 text-primary mt-4">Contact Information</h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required>
+                                    </div>
+                                </div>
+
+                                <!-- Location Information Section -->
+                                <h5 class="mb-3 text-primary mt-4">Location Information</h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="county" class="form-label">County *</label>
+                                        <select class="form-select" name="county" id="county" required>
+                                            <option value="">Select Your County</option>
+            <option value="baringo">Baringo</option>
+            <option value="bomet">Bomet</option>
+            <option value="bungoma">Bungoma</option>
+            <option value="busia">Busia</option>
+            <option value="elgeyo_marakwet">Elgeyo Marakwet</option>
+            <option value="embu">Embu</option>
+            <option value="garissa">Garissa</option>
+            <option value="homa_bay">Homa Bay</option>
+            <option value="isiolo">Isiolo</option>
+            <option value="kajiado">Kajiado</option>
+            <option value="kakamega">Kakamega</option>
+            <option value="kericho">Kericho</option>
+            <option value="kiambu">Kiambu</option>
+            <option value="kilifi">Kilifi</option>
+            <option value="kirinyaga">Kirinyaga</option>
+            <option value="kisii">Kisii</option>
+            <option value="kisumu">Kisumu</option>
+            <option value="kitui">Kitui</option>
+            <option value="kwale">Kwale</option>
+            <option value="laikipia">Laikipia</option>
+            <option value="lamu">Lamu</option>
+            <option value="machakos">Machakos</option>
+            <option value="makueni">Makueni</option>
+            <option value="mandera">Mandera</option>
+            <option value="marsabit">Marsabit</option>
+            <option value="meru">Meru</option>
+            <option value="migori">Migori</option>
+            <option value="mombasa">Mombasa</option>
+            <option value="muranga">Murang'a</option>
+            <option value="nairobi">Nairobi</option>
+            <option value="nakuru">Nakuru</option>
+            <option value="nandi">Nandi</option>
+            <option value="narok">Narok</option>
+            <option value="nyamira">Nyamira</option>
+            <option value="nyandarua">Nyandarua</option>
+            <option value="nyeri">Nyeri</option>
+            <option value="samburu">Samburu</option>
+            <option value="siaya">Siaya</option>
+            <option value="taita_taveta">Taita Taveta</option>
+            <option value="tana_river">Tana River</option>
+            <option value="tharaka_nithi">Tharaka Nithi</option>
+            <option value="trans_nzoia">Trans Nzoia</option>
+            <option value="turkana">Turkana</option>
+            <option value="uasin_gishu">Uasin Gishu</option>
+            <option value="vihiga">Vihiga</option>
+            <option value="wajir">Wajir</option>
+            <option value="west_pokot">West Pokot</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="constituency" class="form-label">Constituency *</label>
+                                        <select class="form-select" name="constituency" id="constituency" required>
+                                            <option value="">Select Constituency</option>
+                                            <!-- Constituencies will be populated dynamically based on county -->
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="ward" class="form-label">Ward *</label>
+                                        <select class="form-select" name="ward" id="ward" required>
+                                            <option value="">Select Ward</option>
+                                            <!-- Wards will be populated dynamically based on constituency -->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Identification Information Section -->
+                                <h5 class="mb-3 text-primary mt-4">Identification Information</h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="idNumber" class="form-label">National ID Number *</label>
+                                        <input type="text" class="form-control" name="idNumber" id="idNumber" placeholder="National ID Number" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="passportNumber" class="form-label">Passport Number (if applicable)</label>
+                                        <input type="text" class="form-control" name="passportNumber" id="passportNumber" placeholder="Passport Number">
+                                    </div>
+                                </div>
+
+                                <!-- Special Information Section -->
+                                <h5 class="mb-3 text-primary mt-4">Special Information</h5>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="pwdStatus" class="form-label">Person with Disability (PWD)</label>
+                                        <select class="form-select" name="pwdStatus" id="pwdStatus">
+                                            <option value="">Select Status</option>
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="ncpwdNumber" class="form-label">NCPWD Number (if applicable)</label>
+                                        <input type="text" class="form-control" name="ncpwdNumber" id="ncpwdNumber" placeholder="NCPWD Number" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Special Interest Areas (Check all that apply)</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="youth" id="youth">
+                                                <label class="form-check-label" for="youth">Youth Affairs</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="women" id="women">
+                                                <label class="form-check-label" for="women">Women Affairs</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="education" id="education">
+                                                <label class="form-check-label" for="education">Education</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="health" id="health">
+                                                <label class="form-check-label" for="health">Health</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="agriculture" id="agriculture">
+                                                <label class="form-check-label" for="agriculture">Agriculture</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="business" id="business">
+                                                <label class="form-check-label" for="business">Business & Trade</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="environment" id="environment">
+                                                <label class="form-check-label" for="environment">Environment</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="specialInterests" value="governance" id="governance">
+                                                <label class="form-check-label" for="governance">Governance</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Document Upload Section -->
+                                <h5 class="mb-3 text-primary mt-4">Document Upload (Optional)</h5>
+                                
+                                <div class="mb-3">
+                                    <label for="idCopy" class="form-label">ID Copy (Optional)</label>
+                                    <input type="file" class="form-control" name="idCopy" id="idCopy" accept=".pdf,.jpg,.jpeg,.png">
+                                    <div class="form-text">Upload a clear copy of your National ID (PDF, JPG, PNG)</div>
+                                </div>
+
+                                <!-- Additional Information Section -->
+                                <h5 class="mb-3 text-primary mt-4">Additional Information</h5>
+                                
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Why do you want to join KGP?</label>
+                                    <textarea class="form-control" name="message" id="message" rows="3" placeholder="Tell us why you want to join the Kenya Great Party"></textarea>
+                                </div>
+
+                                <!-- Consent and Agreement Section -->
+                                <h5 class="mb-3 text-primary mt-4">Consent and Agreement</h5>
+                                
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="dataConsent" id="dataConsent" required>
+                                        <label class="form-check-label" for="dataConsent">
+                                            I consent to the collection, processing, and storage of my personal data as outlined in the <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a> *
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="photoConsent" id="photoConsent">
+                                        <label class="form-check-label" for="photoConsent">
+                                            I consent to the use of my photo on the KGP website and promotional materials
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="agreement" id="agreement" required>
+                                        <label class="form-check-label" for="agreement">
+                                            I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a> and <a href="#" data-bs-toggle="modal" data-bs-target="#membershipModal">Membership Agreement</a> *
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- OTP Verification Section -->
+                                <div id="otpSection" class="mb-3" style="display: none;">
+                                    <label for="otpCode" class="form-label">Enter OTP Code *</label>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="otpCode" id="otpCode" placeholder="Enter 6-digit OTP code" maxlength="6">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-outline-primary" id="resendOtp">Resend OTP</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-text">We've sent a verification code to your phone number</div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <span class="loading" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>
+                                    </span>
+                                    <span class="btn-text">Submit Membership Application</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Join KGP Section-->
+
+        <!-- Privacy Policy Modal -->
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="privacyModalLabel">Data Privacy Policy</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>1. Data Collection</h6>
+                        <p>We collect personal information including but not limited to:</p>
+                        <ul>
+                            <li>Name, email, phone number, and address</li>
+                            <li>National ID number and passport details (optional)</li>
+                            <li>Ethnicity, religion, and demographic information</li>
+                            <li>Special interest areas and preferences</li>
+                            <li>PWD status and NCPWD number (if applicable)</li>
+                        </ul>
+
+                        <h6>2. Data Usage</h6>
+                        <p>Your personal data will be used for:</p>
+                        <ul>
+                            <li>Membership registration and verification</li>
+                            <li>Communication regarding party activities</li>
+                            <li>Statistical analysis and reporting</li>
+                            <li>Compliance with legal requirements</li>
+                        </ul>
+
+                        <h6>3. Data Protection</h6>
+                        <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+
+                        <h6>4. Data Sharing</h6>
+                        <p>We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law or for legitimate party purposes.</p>
+
+                        <h6>5. Your Rights</h6>
+                        <p>You have the right to:</p>
+                        <ul>
+                            <li>Access your personal data</li>
+                            <li>Correct inaccurate information</li>
+                            <li>Request deletion of your data</li>
+                            <li>Withdraw consent at any time</li>
+                        </ul>
+
+                        <h6>6. Contact Information</h6>
+                        <p>For privacy-related inquiries, contact us at: privacy@kenyagreatparty.org</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Conditions Modal -->
+        <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>1. Membership Eligibility</h6>
+                        <p>To become a member of the Kenya Great Party, you must:</p>
+                        <ul>
+                            <li>Be a Kenyan citizen</li>
+                            <li>Be at least 18 years old</li>
+                            <li>Provide accurate and complete information</li>
+                            <li>Agree to abide by party rules and regulations</li>
+                        </ul>
+
+                        <h6>2. Membership Rights</h6>
+                        <p>As a member, you have the right to:</p>
+                        <ul>
+                            <li>Participate in party activities</li>
+                            <li>Vote in internal party elections</li>
+                            <li>Access party information and resources</li>
+                            <li>Contribute to policy development</li>
+                        </ul>
+
+                        <h6>3. Membership Obligations</h6>
+                        <p>As a member, you agree to:</p>
+                        <ul>
+                            <li>Uphold party values and principles</li>
+                            <li>Respect other members and party officials</li>
+                            <li>Participate constructively in party activities</li>
+                            <li>Maintain confidentiality of sensitive information</li>
+                        </ul>
+
+                        <h6>4. Termination of Membership</h6>
+                        <p>Membership may be terminated for:</p>
+                        <ul>
+                            <li>Violation of party rules</li>
+                            <li>Conduct unbecoming of a member</li>
+                            <li>Resignation by the member</li>
+                            <li>Death of the member</li>
+                        </ul>
+
+                        <h6>5. Dispute Resolution</h6>
+                        <p>Any disputes arising from membership will be resolved through the party's internal dispute resolution mechanism.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Membership Agreement Modal -->
+        <div class="modal fade" id="membershipModal" tabindex="-1" aria-labelledby="membershipModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="membershipModalLabel">Membership Agreement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Kenya Great Party Membership Agreement</h6>
+                        
+                        <p><strong>I, the undersigned, hereby apply for membership in the Kenya Great Party and agree to the following terms:</strong></p>
+
+                        <h6>1. Commitment to Party Values</h6>
+                        <p>I commit to upholding the values of democracy, transparency, accountability, and service to the people of Kenya.</p>
+
+                        <h6>2. Active Participation</h6>
+                        <p>I agree to actively participate in party activities, contribute to policy development, and support party candidates in elections.</p>
+
+                        <h6>3. Financial Obligations</h6>
+                        <p>I understand that membership may involve financial contributions as determined by the party leadership, and I agree to fulfill these obligations.</p>
+
+                        <h6>4. Code of Conduct</h6>
+                        <p>I agree to conduct myself in a manner that reflects positively on the party and to treat all members and officials with respect.</p>
+
+                        <h6>5. Confidentiality</h6>
+                        <p>I agree to maintain the confidentiality of sensitive party information and not to disclose such information to unauthorized persons.</p>
+
+                        <h6>6. Compliance with Laws</h6>
+                        <p>I agree to comply with all applicable laws and regulations in my activities as a party member.</p>
+
+                        <h6>7. Termination</h6>
+                        <p>I understand that my membership may be terminated for violation of this agreement or party rules, and I agree to accept such termination.</p>
+
+                        <p><strong>By signing this agreement, I acknowledge that I have read, understood, and agree to be bound by its terms.</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Start footer area -->
+        <footer class="footer-area">
+            <div class="footer-area__shape1">
+                <img src="assets/images/shapes/footer-v1-shape1.png" alt="#">
+            </div>
+            <!--Start Footer-->
+            <div class="footer">
+                <div class="auto-container">
+                    <div class="row">
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.1s">
+                            <div class="single-footer-widget">
+                                <div class="our-company-info">
+                                    <div class="footer-logo-style1">
+                                        <a href="/">
+                                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" title="" width="100">
+                                        </a>
+                                    </div>
+                                    <div class="our-company-info__text">
+                                        <p>Kenya Great Party (KGP) is committed to building a brighter future for all Kenyans through visionary leadership and inclusive policies.</p>
+                                    </div>
+                                    <ul class="our-company-info__social-link">
+                                        <li>
+                                            <a href="#"><span class="icon-facebook-app-symbol"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-twitter"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-instagram"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.3s">
+                            <div class="single-footer-widget single-footer-widget--explore">
+                                <div class="title">
+                                    <h3>Explore</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="#">About KGP</a></li>
+                                        <li><a href="#">Our Manifesto</a></li>
+                                        <li><a href="#">Leadership Team</a></li>
+                                        <li><a href="#">News & Updates</a></li>
+                                        <li><a href="#">Get Involved</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.5s">
+                            <div class="single-footer-widget single-footer-widget--links">
+                                <div class="title">
+                                    <h3>Useful Links</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="#">Volunteer</a></li>
+                                        <li><a href="#">Donate</a></li>
+                                        <li><a href="#">Events Calendar</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.7s">
+                            <div class="single-footer-widget footer-widget--contact">
+                                <div class="title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="footer-widget--contact-info">
+                                    <div class="footer-widget--contact-info-text">
+                                        <p>Get in touch with us for any inquiries or support.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>KGP Headquarters, Nairobi, Kenya</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-mail-1"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:info@kenyagreatparty.org">info@kenyagreatparty.org</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-telephone"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:+254729554475">+254 729 554 475</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                    </div>
+                </div>
+            </div>
+            <!--End Footer-->
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="bottom-inner text-center">
+                        <div class="copyright">
+                            <p>&copy; 2024 Kenya Great Party. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End footer area-->
+    </div>
+    <!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler">
+                <i class="icon-plus"></i>
+            </span>
+            <div class="logo-box">
+                <a href="/" aria-label="logo image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" width="80" />
+                </a>
+            </div>
+            <div class="mobile-nav__container"></div>
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@kenyagreatparty.org">info@kenyagreatparty.org</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:+254729554475">+254 729 554 475</a>
+                </li>
+            </ul>
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label>
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <i class="icon-down-arrow"></i>
+    </a>
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/countdown/countdown.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/timepicker/timePicker.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+
+    <!-- Template js -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- API Integration Script -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.floating-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // PWD Status Toggle
+            const pwdStatus = document.getElementById('pwdStatus');
+            const ncpwdNumber = document.getElementById('ncpwdNumber');
+            
+            pwdStatus.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    ncpwdNumber.disabled = false;
+                    ncpwdNumber.required = true;
+                } else {
+                    ncpwdNumber.disabled = true;
+                    ncpwdNumber.required = false;
+                    ncpwdNumber.value = '';
+                }
+            });
+
+            // County-Constituency-Ward Cascade
+            const countySelect = document.getElementById('county');
+            const constituencySelect = document.getElementById('constituency');
+            const wardSelect = document.getElementById('ward');
+
+            // Sample data for demonstration - in production, this would come from an API
+            const locationData = {
+                'nairobi': {
+                    constituencies: ['Westlands', 'Dagoretti North', 'Dagoretti South', 'Langata', 'Kibra', 'Roysambu', 'Kasarani', 'Ruaraka', 'Embakasi South', 'Embakasi North', 'Embakasi Central', 'Embakasi East', 'Embakasi West', 'Makadara', 'Kamukunji', 'Starehe', 'Mathare', 'Kasarani'],
+                    wards: {
+                        'Westlands': ['Parklands/Highridge', 'Karura', 'Kangemi', 'Mountain View'],
+                        'Dagoretti North': ['Kilimani', 'Kawangware', 'Gatina', 'Kileleshwa', 'Kabiro'],
+                        'Dagoretti South': ['Mutu-ini', 'Ngando', 'Riruta', 'Uthiru/Ruthimitu', 'Waithaka']
+                    }
+                },
+                'kiambu': {
+                    constituencies: ['Gatundu South', 'Gatundu North', 'Juja', 'Thika Town', 'Ruiru', 'Githunguri', 'Kiambu', 'Kiambaa', 'Kabete', 'Kikuyu', 'Limuru', 'Lari'],
+                    wards: {
+                        'Thika Town': ['Township', 'Kamenu', 'Hospital', 'Gatuanyaga', 'Ngoliba'],
+                        'Ruiru': ['Gitothua', 'Biashara', 'Gatongora', 'Kahawa Sukari', 'Kahawa Wendani', 'Kiuu', 'Mwiki', 'Mwihoko']
+                    }
+                }
+            };
+
+            countySelect.addEventListener('change', function() {
+                const selectedCounty = this.value;
+                constituencySelect.innerHTML = '<option value="">Select Constituency</option>';
+                wardSelect.innerHTML = '<option value="">Select Ward</option>';
+                
+                if (selectedCounty && locationData[selectedCounty]) {
+                    locationData[selectedCounty].constituencies.forEach(constituency => {
+                        const option = document.createElement('option');
+                        option.value = constituency.toLowerCase().replace(/\s+/g, '_');
+                        option.textContent = constituency;
+                        constituencySelect.appendChild(option);
+                    });
+                }
+            });
+
+            constituencySelect.addEventListener('change', function() {
+                const selectedCounty = countySelect.value;
+                const selectedConstituency = this.value;
+                wardSelect.innerHTML = '<option value="">Select Ward</option>';
+                
+                if (selectedCounty && selectedConstituency && locationData[selectedCounty] && locationData[selectedCounty].wards[selectedConstituency]) {
+                    locationData[selectedCounty].wards[selectedConstituency].forEach(ward => {
+                        const option = document.createElement('option');
+                        option.value = ward.toLowerCase().replace(/\s+/g, '_');
+                        option.textContent = ward;
+                        wardSelect.appendChild(option);
+                    });
+                }
+            });
+
+            // OTP Functionality
+            let otpSent = false;
+            const otpSection = document.getElementById('otpSection');
+            const resendOtpBtn = document.getElementById('resendOtp');
+
+            // Simulate OTP sending
+            function sendOTP() {
+                const phone = document.getElementById('phone').value;
+                if (phone && phone.length >= 10) {
+                    // In production, this would make an API call to send OTP
+                    console.log('OTP sent to:', phone);
+                    otpSent = true;
+                    otpSection.style.display = 'block';
+                    Utils.showAlert('OTP sent to your phone number', 'success');
+                } else {
+                    Utils.showAlert('Please enter a valid phone number first', 'warning');
+                }
+            }
+
+            resendOtpBtn.addEventListener('click', sendOTP);
+
+            // Enhanced form submission with OTP verification
+            const membershipForm = document.getElementById('membership-form');
+            membershipForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // If OTP hasn't been sent, send it first
+                if (!otpSent) {
+                    sendOTP();
+                    return;
+                }
+
+                // Verify OTP
+                const otpCode = document.getElementById('otpCode').value;
+                if (!otpCode || otpCode.length !== 6) {
+                    Utils.showAlert('Please enter a valid 6-digit OTP code', 'warning');
+                    return;
+                }
+
+                // In production, verify OTP with backend
+                if (otpCode !== '123456') { // Demo OTP
+                    Utils.showAlert('Invalid OTP code. Please try again.', 'error');
+                    return;
+                }
+
+                // Collect form data
+                const formData = new FormData(membershipForm);
+                const membershipData = {
+                    surname: formData.get('surname'),
+                    otherNames: formData.get('otherNames'),
+                    sex: formData.get('sex'),
+                    dateOfBirth: formData.get('dateOfBirth'),
+                    ethnicity: formData.get('ethnicity'),
+                    religion: formData.get('religion'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    county: formData.get('county'),
+                    constituency: formData.get('constituency'),
+                    ward: formData.get('ward'),
+                    idNumber: formData.get('idNumber'),
+                    passportNumber: formData.get('passportNumber'),
+                    pwdStatus: formData.get('pwdStatus'),
+                    ncpwdNumber: formData.get('ncpwdNumber'),
+                    specialInterests: formData.getAll('specialInterests'),
+                    message: formData.get('message'),
+                    dataConsent: formData.get('dataConsent'),
+                    photoConsent: formData.get('photoConsent'),
+                    agreement: formData.get('agreement')
+                };
+
+                // Validate required fields
+                const requiredFields = ['surname', 'otherNames', 'sex', 'dateOfBirth', 'ethnicity', 'religion', 'email', 'phone', 'county', 'constituency', 'ward', 'idNumber', 'dataConsent', 'agreement'];
+                for (const field of requiredFields) {
+                    if (!membershipData[field]) {
+                        Utils.showAlert(`Please fill in all required fields`, 'danger');
+                        return;
+                    }
+                }
+
+                try {
+                    Utils.showLoading(membershipForm);
+                    await API.submitMembership(membershipData);
+                    Utils.showAlert('Thank you for your membership application! We will review it and get back to you.', 'success');
+                    membershipForm.reset();
+                    otpSection.style.display = 'none';
+                    otpSent = false;
+                } catch (error) {
+                    Utils.showAlert('Error submitting application. Please try again.', 'danger');
+                } finally {
+                    Utils.hideLoading(membershipForm);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

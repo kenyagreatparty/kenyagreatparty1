@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenya Great Party (KGP) - Official Website</title>
+    <!-- Favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Kenya Great Party - Building a Brighter Future for Kenya" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Module css -->
+    <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        :root {
+            --thm-base: #ADD8E6;
+            --thm-base-rgb: 173, 216, 230;
+        }
+        .floating-header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 91.66%;
+            max-width: 1024px;
+            z-index: 1030;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header.scrolled .navbar {
+            padding: 0.25rem 1rem;
+        }
+        .logo-circle {
+            left: -5px;
+            top: 2px;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        @media (max-width: 767.98px) {
+            .floating-header .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            .floating-header .navbar-collapse.show {
+                max-height: 256px;
+            }
+        }
+        .alert {
+            display: none;
+            margin-top: 1rem;
+        }
+        .loading {
+            display: none;
+        }
+        .loading.show {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Start Preloader -->
+    <div class="loader-wrap">
+        <div class="preloader">
+            <div class="preloader-close">x</div>
+            <div id="handle-preloader" class="handle-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"><img class="ms-5 df" src="./assets/images/favicons/kgp3-rotated.png" alt="KGP Logo" height="130"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="k" class="letters-loading">k</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="n" class="letters-loading">n</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span> </span>
+                        <span data-text-preloader="g" class="letters-loading">g</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span> </span>
+                        <span data-text-preloader="p" class="letters-loading">p</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <div class="page-wrapper">
+        <!--Start Main Header One-->
+        <header class="floating-header">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        <div class="logo-circle me-2">
+                            <img class="ms-20 df" src="./assets/images/favicons/kgp2-upright.png" alt="KGP Logo" height="180">
+                        </div>
+                        <span class="d-none d-md-inline ms-4">Kenya Great Party</span>
+                    </a>
+                    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    About Us
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                    <li><a class="dropdown-item" href="/about.html#history">History</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#values">Values</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#team">Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    News
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                    <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Downloads
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                    <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        <span class="ms-2">Join KGP</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <!--End Main Header One-->
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Start Main Slider -->
+        <section class="main-slider main-slider-one">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                "delay": 5000
+                }}'>
+                <div class="swiper-wrapper">
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slides/slide-v1-1.jpg);">
+                        </div>
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__content">
+                                        <div class="title">
+                                            <h2>Building a <br> Brighter <span>Future</span> <br>for Kenya</h2>
+                                        </div>
+                                        <div class="text">
+                                            <p>Join us in our mission to create a prosperous and united Kenya <br> through visionary leadership and inclusive policies.</p>
+                                        </div>
+                                        <div class="btn-box">
+                                            <a class="btn-one" href="/about.html">
+                                                <span class="txt">Learn More</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+
+                    <!--Start Single Swiper Slide-->
+                    <div class="swiper-slide">
+                        <div class="image-layer" style="background-image: url(assets/images/slides/slide-v1-2.jpg);">
+                        </div>
+                        <div class="auto-container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-one__content">
+                                        <div class="title">
+                                            <h2>Empowering <br> Kenyans for a <span>Better</span> <br>Tomorrow</h2>
+                                        </div>
+                                        <div class="text">
+                                            <p>KGP is committed to creating opportunities and improving lives <br> across all sectors of our society.</p>
+                                        </div>
+                                        <div class="btn-box">
+                                            <a class="btn-one" href="/join.html">
+                                                <span class="txt">Join Our Cause</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Single Swiper Slide-->
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                        <i class="icon-left-arrow"></i>
+                    </div>
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                        <i class="icon-right-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Main Slider-->
+
+        <!-- Dynamic content will be loaded here -->
+        <div id="dynamic-content">
+            <!-- Content will be loaded via JavaScript -->
+        </div>
+
+        <!--Start footer area -->
+        <footer class="footer-area">
+            <div class="footer-area__shape1">
+                <img src="assets/images/shapes/footer-v1-shape1.png" alt="#">
+            </div>
+            <!--Start Footer-->
+            <div class="footer">
+                <div class="auto-container">
+                    <div class="row">
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.1s">
+                            <div class="single-footer-widget">
+                                <div class="our-company-info">
+                                    <div class="footer-logo-style1">
+                                        <a href="/">
+                                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" title="" width="100">
+                                        </a>
+                                    </div>
+                                    <div class="our-company-info__text">
+                                        <p>Kenya Great Party (KGP) is committed to building a brighter future for all Kenyans through visionary leadership and inclusive policies.</p>
+                                    </div>
+                                    <ul class="our-company-info__social-link">
+                                        <li>
+                                            <a href="#"><span class="icon-facebook-app-symbol"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-twitter"></span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><span class="icon-instagram"></span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.3s">
+                            <div class="single-footer-widget single-footer-widget--explore">
+                                <div class="title">
+                                    <h3>Explore</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="/about.html">About KGP</a></li>
+                                        <li><a href="#">Our Manifesto</a></li>
+                                        <li><a href="#">Leadership Team</a></li>
+                                        <li><a href="/news.html">News & Updates</a></li>
+                                        <li><a href="/join.html">Get Involved</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.5s">
+                            <div class="single-footer-widget single-footer-widget--links">
+                                <div class="title">
+                                    <h3>Useful Links</h3>
+                                </div>
+                                <div class="footer-widget-links">
+                                    <ul>
+                                        <li><a href="#">Volunteer</a></li>
+                                        <li><a href="#">Donate</a></li>
+                                        <li><a href="#">Events Calendar</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="/contact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+
+                        <!--Start single footer widget-->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 wow animated fadeInUp" data-wow-delay="0.7s">
+                            <div class="single-footer-widget footer-widget--contact">
+                                <div class="title">
+                                    <h3>Contact</h3>
+                                </div>
+                                <div class="footer-widget--contact-info">
+                                    <div class="footer-widget--contact-info-text">
+                                        <p>Get in touch with us for any inquiries or support.</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>KGP Headquarters, Nairobi, Kenya</p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-mail-1"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:info@kenyagreatparty.com">info@kenyagreatparty.com</a></p>
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-telephone"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:+254123456789">+254 729554475</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End single footer widget-->
+                    </div>
+                </div>
+            </div>
+            <!--End Footer-->
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="bottom-inner text-center">
+                        <div class="copyright">
+                            <p>&copy; 2024 Kenya Great Party. All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End footer area-->
+    </div>
+    <!-- /.page-wrapper -->
+
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-migrate/jquery-migrate.min.js"></script>
+    <script src="assets/vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/parallax/parallax.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/timepicker/timePicker.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/typed-2.0.11/typed-2.0.11.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/jarallax/jarallax.min.js"></script>
+
+    <!-- Template js -->
+    <script src="assets/js/custom.js"></script>
+
+    <!-- API Integration Script -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.floating-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
