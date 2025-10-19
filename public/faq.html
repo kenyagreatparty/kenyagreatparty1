@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Kenya Great Party (KGP)</title>
+    <!-- Favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Frequently Asked Questions about Kenya Great Party membership, policies, and activities" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Module css -->
+    <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        :root {
+            --thm-base: #ADD8E6;
+            --thm-base-rgb: 173, 216, 230;
+        }
+        .floating-header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 91.66%;
+            max-width: 1024px;
+            z-index: 1030;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header.scrolled .navbar {
+            padding: 0.25rem 1rem;
+        }
+        .logo-circle {
+            left: -5px;
+            top: 2px;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        @media (max-width: 767.98px) {
+            .floating-header .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            .floating-header .navbar-collapse.show {
+                max-height: 500px;
+            }
+        }
+        .faq-item {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        .faq-answer {
+            padding: 1rem;
+            background-color: white;
+            display: none;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-icon.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <!--Start Main Header One-->
+    <header class="floating-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <div class="logo-circle position-relative me-2">
+                        <img src="assets/images/resources/logo.png" alt="KGP Logo" class="img-fluid" style="max-height: 2rem;">
+                    </div>
+                    <span class="text-white fw-bold">Kenya Great Party</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="/about.html#history">History</a></li>
+                                <li><a class="dropdown-item" href="/about.html#values">Values</a></li>
+                                <li><a class="dropdown-item" href="/about.html#team">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                News
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
+                                <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Downloads
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                <li><a class="dropdown-item" href="/downloads.html#constitution">Constitution</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#manifesto">Manifesto</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/join.html">Join KGP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Join Now
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!--End Main Header One-->
+
+    <!--Start Page Header-->
+    <section class="page-header">
+        <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page-header__wrapper text-center">
+                        <div class="page-header__title">
+                            <h2>Frequently Asked Questions</h2>
+                        </div>
+                        <div class="page-header__menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>FAQ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Header-->
+
+    <!--Start FAQ Section-->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center mb-5">
+                        <h2 class="mb-3">Frequently Asked Questions</h2>
+                        <p class="text-muted">Find answers to common questions about the Kenya Great Party</p>
+                    </div>
+
+                    <!-- Membership FAQ -->
+                    <div class="faq-category mb-5">
+                        <h4 class="mb-4 text-primary">Membership</h4>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I become a member of the Kenya Great Party?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To become a member, you need to:</p>
+                                <ul>
+                                    <li>Be a Kenyan citizen</li>
+                                    <li>Be at least 18 years old</li>
+                                    <li>Fill out the membership application form on our website</li>
+                                    <li>Provide valid identification documents</li>
+                                    <li>Agree to our party constitution and values</li>
+                                </ul>
+                                <p>You can start your application by visiting our <a href="/join.html">Join KGP</a> page.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What are the membership fees?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Membership fees are as follows:</p>
+                                <ul>
+                                    <li>Ordinary Member: KSh 100 per year</li>
+                                    <li>Youth Member (18-35 years): KSh 50 per year</li>
+                                    <li>Student Member: KSh 25 per year</li>
+                                    <li>Life Member: KSh 5,000 (one-time payment)</li>
+                                </ul>
+                                <p>Payment can be made through M-Pesa, bank transfer, or at our party offices.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I check my membership status?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can check your membership status by:</p>
+                                <ul>
+                                    <li>Logging into your account on our website</li>
+                                    <li>Calling our membership hotline: 0700 000 000</li>
+                                    <li>Visiting any of our party offices</li>
+                                    <li>Sending an email to membership@kenyagreatparty.org</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I resign from the party?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To resign from the party, you can:</p>
+                                <ul>
+                                    <li>Submit a written resignation letter to the party secretary</li>
+                                    <li>Use our online resignation form (coming soon)</li>
+                                    <li>Visit any party office and fill out a resignation form</li>
+                                </ul>
+                                <p>Your resignation will be processed within 30 days of receipt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Party Activities FAQ -->
+                    <div class="faq-category mb-5">
+                        <h4 class="mb-4 text-primary">Party Activities</h4>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I participate in party activities?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>As a member, you can participate in various ways:</p>
+                                <ul>
+                                    <li>Attend party meetings and conventions</li>
+                                    <li>Join party committees and working groups</li>
+                                    <li>Volunteer for party events and campaigns</li>
+                                    <li>Contribute to policy development</li>
+                                    <li>Run for party positions in internal elections</li>
+                                </ul>
+                                <p>Check our <a href="/news.html">News</a> section for upcoming events and activities.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How often are party meetings held?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Party meetings are held at different levels:</p>
+                                <ul>
+                                    <li>Branch meetings: Monthly</li>
+                                    <li>Constituency meetings: Quarterly</li>
+                                    <li>County meetings: Bi-annually</li>
+                                    <li>National meetings: Annually</li>
+                                </ul>
+                                <p>Special meetings may be called as needed. Members are notified in advance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Policies FAQ -->
+                    <div class="faq-category mb-5">
+                        <h4 class="mb-4 text-primary">Policies & Positions</h4>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What are the party's main policy positions?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Our main policy areas include:</p>
+                                <ul>
+                                    <li><strong>Economic Development:</strong> Job creation, support for SMEs, and inclusive growth</li>
+                                    <li><strong>Education:</strong> Quality education for all, technical skills development</li>
+                                    <li><strong>Healthcare:</strong> Universal healthcare access and improved infrastructure</li>
+                                    <li><strong>Governance:</strong> Transparency, accountability, and citizen participation</li>
+                                    <li><strong>Environment:</strong> Sustainable development and renewable energy</li>
+                                </ul>
+                                <p>Read our full <a href="/downloads.html#manifesto">manifesto</a> for detailed policy positions.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I contribute to policy development?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Members can contribute to policy development through:</p>
+                                <ul>
+                                    <li>Participating in policy forums and workshops</li>
+                                    <li>Submitting policy proposals to relevant committees</li>
+                                    <li>Engaging in public consultations</li>
+                                    <li>Joining policy working groups</li>
+                                    <li>Attending party conventions where policies are debated</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical FAQ -->
+                    <div class="faq-category mb-5">
+                        <h4 class="mb-4 text-primary">Technical Support</h4>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>I'm having trouble with the website. What should I do?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>If you're experiencing technical issues:</p>
+                                <ul>
+                                    <li>Try refreshing the page or clearing your browser cache</li>
+                                    <li>Ensure you're using a supported browser (Chrome, Firefox, Safari, Edge)</li>
+                                    <li>Check your internet connection</li>
+                                    <li>Contact our technical support team at tech@kenyagreatparty.org</li>
+                                    <li>Call our support hotline: 0700 000 001</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I reset my password?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>To reset your password:</p>
+                                <ul>
+                                    <li>Go to the <a href="/login.html">login page</a></li>
+                                    <li>Click on "Forgot Password"</li>
+                                    <li>Enter your email address</li>
+                                    <li>Check your email for reset instructions</li>
+                                    <li>Follow the link to create a new password</li>
+                                </ul>
+                                <p>If you don't receive the email, check your spam folder or contact support.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact FAQ -->
+                    <div class="faq-category mb-5">
+                        <h4 class="mb-4 text-primary">Contact & Support</h4>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I contact the party leadership?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>You can contact the party leadership through:</p>
+                                <ul>
+                                    <li>Email: info@kenyagreatparty.org</li>
+                                    <li>Phone: 0700 000 000</li>
+                                    <li>Visit our headquarters: [Address]</li>
+                                    <li>Write to us: P.O. Box [Number], Nairobi</li>
+                                </ul>
+                                <p>For specific inquiries, visit our <a href="/contact.html">contact page</a>.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Where are the party offices located?</span>
+                                <i class="fas fa-chevron-down faq-icon"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We have offices in:</p>
+                                <ul>
+                                    <li><strong>Nairobi (Headquarters):</strong> [Address]</li>
+                                    <li><strong>Mombasa:</strong> [Address]</li>
+                                    <li><strong>Kisumu:</strong> [Address]</li>
+                                    <li><strong>Nakuru:</strong> [Address]</li>
+                                    <li><strong>Eldoret:</strong> [Address]</li>
+                                </ul>
+                                <p>We're expanding to all counties. Check our <a href="/contact.html">contact page</a> for the latest office locations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End FAQ Section-->
+
+    <!--Start footer area -->
+    <footer class="footer-area">
+        <div class="footer-area__shape1">
+            <img src="assets/images/shapes/footer-v1-shape1.png" alt="#">
+        </div>
+        <div class="container">
+            <div class="footer-area__top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="footer-widget">
+                            <div class="footer-widget__logo">
+                                <a href="/"><img src="assets/images/resources/logo.png" alt=""></a>
+                            </div>
+                            <div class="footer-widget__text">
+                                <p>Building a Brighter Future for Kenya through Unity, Progress, and Service to the People.</p>
+                            </div>
+                            <div class="footer-widget__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Quick Links</h3>
+                            <ul class="footer-widget__links">
+                                <li><a href="/about.html">About Us</a></li>
+                                <li><a href="/news.html">News</a></li>
+                                <li><a href="/downloads.html">Downloads</a></li>
+                                <li><a href="/contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Membership</h3>
+                            <ul class="footer-widget__links">
+                                <li><a href="/join.html">Join KGP</a></li>
+                                <li><a href="/login.html">Member Login</a></li>
+                                <li><a href="/faq.html">FAQ</a></li>
+                                <li><a href="/downloads.html#constitution">Constitution</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Contact Info</h3>
+                            <ul class="footer-widget__contact">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Nairobi, Kenya</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>+254 700 000 000</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>info@kenyagreatparty.org</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-area__bottom">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footer-area__bottom-left">
+                            <p>© Copyright 2024 <a href="/">Kenya Great Party</a> All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footer-area__bottom-right">
+                            <ul>
+                                <li><a href="/downloads.html#privacy">Privacy Policy</a></li>
+                                <li><a href="/downloads.html#terms">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End footer area-->
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-mb.YTPlayer/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/extra-scripts/jquery.paroller.min.js"></script>
+    <script src="assets/vendors/extra-scripts/mixitup-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.floating-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('show');
+                }
+            });
+            
+            document.querySelectorAll('.faq-icon').forEach(item => {
+                if (item !== icon) {
+                    item.classList.remove('rotated');
+                }
+            });
+            
+            // Toggle current FAQ item
+            answer.classList.toggle('show');
+            icon.classList.toggle('rotated');
+        }
+    </script>
+</body>
+</html>

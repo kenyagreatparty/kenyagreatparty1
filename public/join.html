@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="Join Kenya Great Party - Be Part of the Change" />
+    <meta name="keywords" content="Kenya Great Party, KGP, membership, join, politics, Kenya, accessibility, WCAG" />
 
     <!-- fonts -->
     <link
@@ -88,6 +89,40 @@
             justify-content: center;
             overflow: visible;
         }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        .sr-only-focusable:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: inherit;
+            margin: inherit;
+            overflow: visible;
+            clip: auto;
+            white-space: normal;
+        }
         @media (max-width: 767.98px) {
             .floating-header .navbar-collapse {
                 position: absolute;
@@ -139,6 +174,9 @@
 </head>
 
 <body>
+    <!-- Skip Navigation for Screen Readers -->
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">Skip to main content</a>
+    
     <!-- Start Preloader -->
     <div class="loader-wrap">
         <div class="preloader">
@@ -266,7 +304,7 @@
         <!--End Breadcrumb Style1-->
 
         <!--Start Join KGP Section-->
-        <section class="join-kgp-section">
+        <section class="join-kgp-section" id="main-content">
             <div class="auto-container">
                 <div class="row">
                     <div class="col-xl-6 col-lg-6">
@@ -311,33 +349,37 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="join-form">
                             <h2>Membership Application</h2>
-                            <form id="membership-form" action="#" method="post">
+                            <form id="membership-form" action="#" method="post" role="form" aria-label="Kenya Great Party Membership Application Form">
                                 <!-- Personal Information Section -->
                                 <h5 class="mb-3 text-primary">Personal Information</h5>
                                 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="surname" class="form-label">Surname *</label>
-                                        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" required>
+                                        <input type="text" class="form-control" name="surname" id="surname" placeholder="Surname" required aria-describedby="surname-help" aria-required="true">
+                                        <div id="surname-help" class="form-text">Enter your family name or surname</div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="otherNames" class="form-label">Other Names *</label>
-                                        <input type="text" class="form-control" name="otherNames" id="otherNames" placeholder="Other Names" required>
+                                        <input type="text" class="form-control" name="otherNames" id="otherNames" placeholder="Other Names" required aria-describedby="otherNames-help" aria-required="true">
+                                        <div id="otherNames-help" class="form-text">Enter your first name and middle names</div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="sex" class="form-label">Sex *</label>
-                                        <select class="form-select" name="sex" id="sex" required>
+                                        <select class="form-select" name="sex" id="sex" required aria-describedby="sex-help" aria-required="true">
                                             <option value="">Select Sex</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
+                                        <div id="sex-help" class="form-text">Select your biological sex</div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="dateOfBirth" class="form-label">Date of Birth *</label>
-                                        <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required>
+                                        <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth" required aria-describedby="dateOfBirth-help" aria-required="true">
+                                        <div id="dateOfBirth-help" class="form-text">Enter your date of birth (DD/MM/YYYY)</div>
                                     </div>
                                 </div>
 
@@ -586,6 +628,54 @@
                                             I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a> and <a href="#" data-bs-toggle="modal" data-bs-target="#membershipModal">Membership Agreement</a> *
                                         </label>
                                     </div>
+                                </div>
+
+                                <!-- Payment Options Section -->
+                                <h5 class="mb-3 text-primary mt-4">Payment Options</h5>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Select Payment Method *</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="mpesa" value="mpesa" required>
+                                                <label class="form-check-label" for="mpesa">
+                                                    <i class="fas fa-mobile-alt me-2"></i>M-Pesa
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="bankTransfer" value="bank_transfer" required>
+                                                <label class="form-check-label" for="bankTransfer">
+                                                    <i class="fas fa-university me-2"></i>Bank Transfer
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="credit_card" required>
+                                                <label class="form-check-label" for="creditCard">
+                                                    <i class="fas fa-credit-card me-2"></i>Credit/Debit Card
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="paymentMethod" id="cash" value="cash" required>
+                                                <label class="form-check-label" for="cash">
+                                                    <i class="fas fa-money-bill me-2"></i>Cash at Party Office
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="membershipType" class="form-label">Membership Type *</label>
+                                    <select class="form-select" name="membershipType" id="membershipType" required>
+                                        <option value="">Select Membership Type</option>
+                                        <option value="ordinary" data-amount="100">Ordinary Member - KSh 100/year</option>
+                                        <option value="youth" data-amount="50">Youth Member (18-35) - KSh 50/year</option>
+                                        <option value="student" data-amount="25">Student Member - KSh 25/year</option>
+                                        <option value="life" data-amount="5000">Life Member - KSh 5,000 (one-time)</option>
+                                    </select>
                                 </div>
 
                                 <!-- OTP Verification Section -->
@@ -1006,6 +1096,49 @@
                 }
             });
 
+            // Payment method and membership type handling
+            const membershipType = document.getElementById('membershipType');
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            
+            membershipType.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                const amount = selectedOption.getAttribute('data-amount');
+                
+                if (amount) {
+                    // Show payment amount
+                    let paymentInfo = document.getElementById('paymentInfo');
+                    if (!paymentInfo) {
+                        paymentInfo = document.createElement('div');
+                        paymentInfo.id = 'paymentInfo';
+                        paymentInfo.className = 'alert alert-info mt-2';
+                        membershipType.parentNode.appendChild(paymentInfo);
+                    }
+                    paymentInfo.innerHTML = `<strong>Amount to Pay: KSh ${amount}</strong>`;
+                }
+            });
+
+            // Payment method specific instructions
+            paymentMethods.forEach(method => {
+                method.addEventListener('change', function() {
+                    let paymentInstructions = document.getElementById('paymentInstructions');
+                    if (!paymentInstructions) {
+                        paymentInstructions = document.createElement('div');
+                        paymentInstructions.id = 'paymentInstructions';
+                        paymentInstructions.className = 'alert alert-light mt-2';
+                        this.closest('.mb-3').appendChild(paymentInstructions);
+                    }
+
+                    const instructions = {
+                        'mpesa': 'You will receive M-Pesa payment instructions via SMS after form submission.',
+                        'bank_transfer': 'Bank details will be provided after form submission. Please include your membership ID in the reference.',
+                        'credit_card': 'You will be redirected to a secure payment gateway after form submission.',
+                        'cash': 'Visit any KGP office to complete your payment. Bring a copy of your application.'
+                    };
+
+                    paymentInstructions.innerHTML = `<i class="fas fa-info-circle me-2"></i>${instructions[this.value] || ''}`;
+                });
+            });
+
             // County-Constituency-Ward Cascade
             const countySelect = document.getElementById('county');
             const constituencySelect = document.getElementById('constituency');
@@ -1127,14 +1260,16 @@
                     message: formData.get('message'),
                     dataConsent: formData.get('dataConsent'),
                     photoConsent: formData.get('photoConsent'),
-                    agreement: formData.get('agreement')
+                    agreement: formData.get('agreement'),
+                    paymentMethod: formData.get('paymentMethod'),
+                    membershipType: formData.get('membershipType')
                 };
 
                 // Validate required fields
-                const requiredFields = ['surname', 'otherNames', 'sex', 'dateOfBirth', 'ethnicity', 'religion', 'email', 'phone', 'county', 'constituency', 'ward', 'idNumber', 'dataConsent', 'agreement'];
+                const requiredFields = ['surname', 'otherNames', 'sex', 'dateOfBirth', 'ethnicity', 'religion', 'email', 'phone', 'county', 'constituency', 'ward', 'idNumber', 'dataConsent', 'agreement', 'paymentMethod', 'membershipType'];
                 for (const field of requiredFields) {
                     if (!membershipData[field]) {
-                        Utils.showAlert(`Please fill in all required fields`, 'danger');
+                        Utils.showAlert(`Please fill in all required fields including payment method and membership type`, 'danger');
                         return;
                     }
                 }

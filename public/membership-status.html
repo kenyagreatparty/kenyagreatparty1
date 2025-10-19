@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Status - Kenya Great Party (KGP)</title>
+    <!-- Favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Check your membership status or manage your Kenya Great Party membership" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="assets/vendors/nice-select/nice-select.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="assets/vendors/thm-icons/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Module css -->
+    <link rel="stylesheet" href="assets/css/module-css/01-header-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/02-banner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/03-about-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/04-fact-counter-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/05-testimonial-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/06-partner-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/07-footer-section.css">
+    <link rel="stylesheet" href="assets/css/module-css/08-blog-section.css">
+    <!-- template styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <style>
+        :root {
+            --thm-base: #ADD8E6;
+            --thm-base-rgb: 173, 216, 230;
+        }
+        .floating-header {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 91.66%;
+            max-width: 1024px;
+            z-index: 1030;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header .navbar {
+            background-color: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50rem;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .floating-header.scrolled .navbar {
+            padding: 0.25rem 1rem;
+        }
+        .logo-circle {
+            left: -5px;
+            top: 2px;
+            width: 3rem;
+            height: 3rem;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+        .status-card {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status-active {
+            border-left: 4px solid #28a745;
+        }
+        .status-pending {
+            border-left: 4px solid #ffc107;
+        }
+        .status-expired {
+            border-left: 4px solid #dc3545;
+        }
+        .status-inactive {
+            border-left: 4px solid #6c757d;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 767.98px) {
+            .floating-header .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(10px);
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+            }
+            .floating-header .navbar-collapse.show {
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Start Main Header One-->
+    <header class="floating-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <div class="logo-circle position-relative me-2">
+                        <img src="assets/images/resources/logo.png" alt="KGP Logo" class="img-fluid" style="max-height: 2rem;">
+                    </div>
+                    <span class="text-white fw-bold">Kenya Great Party</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                About Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                                <li><a class="dropdown-item" href="/about.html#history">History</a></li>
+                                <li><a class="dropdown-item" href="/about.html#values">Values</a></li>
+                                <li><a class="dropdown-item" href="/about.html#team">Our Team</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                News
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                                <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
+                                <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Downloads
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
+                                <li><a class="dropdown-item" href="/downloads.html#constitution">Constitution</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#manifesto">Manifesto</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
+                                <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/join.html">Join KGP</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/faq.html">FAQ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                        <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Join Now
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!--End Main Header One-->
+
+    <!--Start Page Header-->
+    <section class="page-header">
+        <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page-header__wrapper text-center">
+                        <div class="page-header__title">
+                            <h2>Membership Status</h2>
+                        </div>
+                        <div class="page-header__menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>Membership Status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Header-->
+
+    <!--Start Membership Status Section-->
+    <section class="membership-status-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Search Form -->
+                    <div class="status-card">
+                        <h4 class="mb-4">Check Membership Status</h4>
+                        <form id="statusCheckForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="idNumber" class="form-label">National ID Number *</label>
+                                    <input type="text" class="form-control" id="idNumber" name="idNumber" placeholder="Enter your National ID" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin me-2"></i>
+                                </span>
+                                <span class="btn-text">Check Status</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Membership Status Display -->
+                    <div id="membershipStatus" class="status-card" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h4>Membership Information</h4>
+                            <span id="statusBadge" class="badge fs-6"></span>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Name:</strong> <span id="memberName"></span></p>
+                                <p><strong>Membership ID:</strong> <span id="membershipId"></span></p>
+                                <p><strong>Join Date:</strong> <span id="joinDate"></span></p>
+                                <p><strong>Expiry Date:</strong> <span id="expiryDate"></span></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><strong>County:</strong> <span id="memberCounty"></span></p>
+                                <p><strong>Constituency:</strong> <span id="memberConstituency"></span></p>
+                                <p><strong>Ward:</strong> <span id="memberWard"></span></p>
+                                <p><strong>Last Payment:</strong> <span id="lastPayment"></span></p>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons mt-4">
+                            <button class="btn btn-outline-primary" id="renewMembership">
+                                <i class="fas fa-credit-card me-2"></i>Renew Membership
+                            </button>
+                            <button class="btn btn-outline-info" id="updateDetails">
+                                <i class="fas fa-edit me-2"></i>Update Details
+                            </button>
+                            <button class="btn btn-outline-danger" id="resignMembership">
+                                <i class="fas fa-sign-out-alt me-2"></i>Resign from Party
+                            </button>
+                            <button class="btn btn-outline-secondary" id="downloadCertificate">
+                                <i class="fas fa-download me-2"></i>Download Certificate
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Resignation Form -->
+                    <div id="resignationForm" class="status-card" style="display: none;">
+                        <h4 class="mb-4 text-danger">Resignation Request</h4>
+                        <form id="resignationRequestForm">
+                            <div class="alert alert-warning">
+                                <i class="fas fa-exclamation-triangle me-2"></i>
+                                <strong>Warning:</strong> Resigning from the party will terminate your membership and you will lose all associated benefits and voting rights.
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="resignationReason" class="form-label">Reason for Resignation *</label>
+                                <select class="form-select" id="resignationReason" name="resignationReason" required>
+                                    <option value="">Select a reason</option>
+                                    <option value="personal">Personal reasons</option>
+                                    <option value="political">Political differences</option>
+                                    <option value="relocation">Relocation</option>
+                                    <option value="health">Health reasons</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="resignationDetails" class="form-label">Additional Details</label>
+                                <textarea class="form-control" id="resignationDetails" name="resignationDetails" rows="4" placeholder="Please provide additional details (optional)"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="confirmResignation" required>
+                                    <label class="form-check-label" for="confirmResignation">
+                                        I confirm that I want to resign from the Kenya Great Party and understand the consequences of this action.
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                <button type="submit" class="btn btn-danger">
+                                    <span class="loading" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin me-2"></i>
+                                    </span>
+                                    <span class="btn-text">Submit Resignation</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary" id="cancelResignation">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Membership Status Section-->
+
+    <!--Start footer area -->
+    <footer class="footer-area">
+        <div class="footer-area__shape1">
+            <img src="assets/images/shapes/footer-v1-shape1.png" alt="#">
+        </div>
+        <div class="container">
+            <div class="footer-area__top">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="footer-widget">
+                            <div class="footer-widget__logo">
+                                <a href="/"><img src="assets/images/resources/logo.png" alt=""></a>
+                            </div>
+                            <div class="footer-widget__text">
+                                <p>Building a Brighter Future for Kenya through Unity, Progress, and Service to the People.</p>
+                            </div>
+                            <div class="footer-widget__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Quick Links</h3>
+                            <ul class="footer-widget__links">
+                                <li><a href="/about.html">About Us</a></li>
+                                <li><a href="/news.html">News</a></li>
+                                <li><a href="/downloads.html">Downloads</a></li>
+                                <li><a href="/contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Membership</h3>
+                            <ul class="footer-widget__links">
+                                <li><a href="/join.html">Join KGP</a></li>
+                                <li><a href="/login.html">Member Login</a></li>
+                                <li><a href="/membership-status.html">Check Status</a></li>
+                                <li><a href="/faq.html">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="footer-widget">
+                            <h3 class="footer-widget__title">Contact Info</h3>
+                            <ul class="footer-widget__contact">
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>Nairobi, Kenya</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>+254 700 000 000</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>info@kenyagreatparty.org</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-area__bottom">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footer-area__bottom-left">
+                            <p>© Copyright 2024 <a href="/">Kenya Great Party</a> All Rights Reserved.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="footer-area__bottom-right">
+                            <ul>
+                                <li><a href="/downloads.html#privacy">Privacy Policy</a></li>
+                                <li><a href="/downloads.html#terms">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End footer area-->
+
+    <!-- JS -->
+    <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/bxslider/jquery.bxslider.min.js"></script>
+    <script src="assets/vendors/circleType/jquery.circleType.js"></script>
+    <script src="assets/vendors/circleType/jquery.lettering.min.js"></script>
+    <script src="assets/vendors/isotope/isotope.js"></script>
+    <script src="assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+    <script src="assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+    <script src="assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendors/jquery-mb.YTPlayer/jquery.mb.YTPlayer.min.js"></script>
+    <script src="assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+    <script src="assets/vendors/nouislider/nouislider.min.js"></script>
+    <script src="assets/vendors/odometer/odometer.min.js"></script>
+    <script src="assets/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendors/swiper/swiper.min.js"></script>
+    <script src="assets/vendors/tiny-slider/tiny-slider.min.js"></script>
+    <script src="assets/vendors/vegas/vegas.min.js"></script>
+    <script src="assets/vendors/wnumb/wNumb.min.js"></script>
+    <script src="assets/vendors/wow/wow.js"></script>
+    <script src="assets/vendors/extra-scripts/jquery.paroller.min.js"></script>
+    <script src="assets/vendors/extra-scripts/mixitup-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- API Integration Script -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.floating-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Status check form
+            const statusCheckForm = document.getElementById('statusCheckForm');
+            const membershipStatus = document.getElementById('membershipStatus');
+            const resignationForm = document.getElementById('resignationForm');
+
+            statusCheckForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(statusCheckForm);
+                const idNumber = formData.get('idNumber');
+                const phone = formData.get('phone');
+
+                try {
+                    Utils.showLoading(statusCheckForm);
+                    
+                    // Simulate API call - in production, this would call the actual API
+                    const response = await fetch('/api/membership/status', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ idNumber, phone })
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        displayMembershipStatus(result.member);
+                    } else {
+                        Utils.showAlert(result.message || 'Member not found', 'warning');
+                    }
+                } catch (error) {
+                    console.error('Status check error:', error);
+                    Utils.showAlert('Error checking membership status. Please try again.', 'danger');
+                } finally {
+                    Utils.hideLoading(statusCheckForm);
+                }
+            });
+
+            function displayMembershipStatus(member) {
+                document.getElementById('memberName').textContent = member.name;
+                document.getElementById('membershipId').textContent = member.membershipId;
+                document.getElementById('joinDate').textContent = new Date(member.joinDate).toLocaleDateString();
+                document.getElementById('expiryDate').textContent = new Date(member.expiryDate).toLocaleDateString();
+                document.getElementById('memberCounty').textContent = member.county;
+                document.getElementById('memberConstituency').textContent = member.constituency;
+                document.getElementById('memberWard').textContent = member.ward;
+                document.getElementById('lastPayment').textContent = new Date(member.lastPayment).toLocaleDateString();
+
+                const statusBadge = document.getElementById('statusBadge');
+                const statusCard = membershipStatus.querySelector('.status-card');
+                
+                statusBadge.textContent = member.status.toUpperCase();
+                statusBadge.className = 'badge fs-6';
+                
+                switch (member.status) {
+                    case 'active':
+                        statusBadge.classList.add('bg-success');
+                        membershipStatus.classList.add('status-active');
+                        break;
+                    case 'pending':
+                        statusBadge.classList.add('bg-warning');
+                        membershipStatus.classList.add('status-pending');
+                        break;
+                    case 'expired':
+                        statusBadge.classList.add('bg-danger');
+                        membershipStatus.classList.add('status-expired');
+                        break;
+                    default:
+                        statusBadge.classList.add('bg-secondary');
+                        membershipStatus.classList.add('status-inactive');
+                }
+
+                membershipStatus.style.display = 'block';
+            }
+
+            // Resignation functionality
+            document.getElementById('resignMembership').addEventListener('click', function() {
+                resignationForm.style.display = 'block';
+                resignationForm.scrollIntoView({ behavior: 'smooth' });
+            });
+
+            document.getElementById('cancelResignation').addEventListener('click', function() {
+                resignationForm.style.display = 'none';
+            });
+
+            document.getElementById('resignationRequestForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const resignationData = {
+                    reason: formData.get('resignationReason'),
+                    details: formData.get('resignationDetails')
+                };
+
+                try {
+                    Utils.showLoading(this);
+                    
+                    const response = await fetch('/api/membership/resign', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(resignationData)
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        Utils.showAlert('Your resignation request has been submitted successfully. You will receive a confirmation email shortly.', 'success');
+                        resignationForm.style.display = 'none';
+                        this.reset();
+                    } else {
+                        Utils.showAlert(result.message || 'Error submitting resignation request', 'danger');
+                    }
+                } catch (error) {
+                    console.error('Resignation error:', error);
+                    Utils.showAlert('Error submitting resignation request. Please try again.', 'danger');
+                } finally {
+                    Utils.hideLoading(this);
+                }
+            });
+
+            // Other action buttons
+            document.getElementById('renewMembership').addEventListener('click', function() {
+                Utils.showAlert('Payment options will be displayed here', 'info');
+            });
+
+            document.getElementById('updateDetails').addEventListener('click', function() {
+                Utils.showAlert('Update form will be displayed here', 'info');
+            });
+
+            document.getElementById('downloadCertificate').addEventListener('click', function() {
+                Utils.showAlert('Certificate download will be initiated', 'info');
+            });
+        });
+    </script>
+</body>
+</html>

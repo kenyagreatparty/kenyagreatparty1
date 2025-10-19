@@ -17,6 +17,7 @@ const contactRoutes = require('./routes/contact');
 const membershipRoutes = require('./routes/membership');
 const uploadRoutes = require('./routes/upload');
 const adminRoutes = require('./routes/admin');
+const searchRoutes = require('./routes/search');
 
 const app = express();
 
@@ -68,6 +69,7 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/membership', membershipRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/search', searchRoutes);
 
 // Serve specific pages
 app.get('/', (req, res) => {
@@ -100,6 +102,14 @@ app.get('/admin', (req, res) => {
 
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+app.get('/faq', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'faq.html'));
+});
+
+app.get('/membership-status', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'membership-status.html'));
 });
 
 // Serve static files for frontend (catch-all for SPA routing)

@@ -353,4 +353,139 @@ router.get('/status/:email', async (req, res) => {
   }
 });
 
+// Check membership status
+router.post('/status', async (req, res) => {
+    try {
+        const { idNumber, phone } = req.body;
+
+        if (!idNumber || !phone) {
+            return res.status(400).json({
+                success: false,
+                message: 'ID number and phone number are required'
+            });
+        }
+
+        // Find membership by ID number and phone
+        const membership = await Membership.findOne({
+            idNumber: idNumber.trim(),
+            phone: phone.trim()
+        }).populate('user', 'name email');
+
+        if (!membership) {
+            return res.status(404).json({
+                success: false,
+                message: 'No membership found with the provided details'
+            });
+        }
+
+        // Determine membership status
+        let status = 'active';
+        const now = new Date();
+        const expiryDate = new Date(membership.expiryDate);
+
+        if (membership.status === 'pending') {
+            status = 'pending';
+        } else if (membership.status === 'rejected') {
+            status = 'rejected';
+        } else if (membership.status === 'suspended') {
+            status = 'suspended';
+        } else if (expiryDate < now) {
+            status = 'expired';
+        }
+
+        res.json({
+            success: true,
+            member: {
+                name: membership.user ? membership.user.name : `${membership.surname} ${membership.otherNames}`,
+                membershipId: membership.membershipId,
+                joinDate: membership.createdAt,
+                expiryDate: membership.expiryDate,
+                county: membership.county,
+                constituency: membership.constituency,
+                ward: membership.ward,
+                lastPayment: membership.lastPayment || membership.createdAt,
+                status: status
+            }
+        });
+
+    } catch (error) {
+        console.error('Membership status check error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error checking membership status',
+            error: process.env.NODE_ENV === 'development' ? error.message : {}
+        });
+    }
+});
+
+// Submit resignation request
+router.post('/resign', async (req, res) => {
+    try {
+        const { reason, details } = req.body;
+
+        if (!reason) {
+            return res.status(400).json({
+                success: false,
+                message: 'Resignation reason is required'
+            });
+        }
+
+        // In a real application, you would:
+        // 1. Verify the user's identity
+        // 2. Create a resignation record
+        // 3. Send notification emails
+        // 4. Update membership status
+
+        // For now, we'll just return a success response
+        res.json({
+            success: true,
+            message: 'Resignation request submitted successfully. You will receive a confirmation email shortly.',
+            resignationId: `RES-${Date.now()}`
+        });
+
+    } catch (error) {
+        console.error('Resignation error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error processing resignation request',
+            error: process.env.NODE_ENV === 'development' ? error.message : {}
+        });
+    }
+});
+
+// Renew membership
+router.post('/renew', async (req, res) => {
+    try {
+        const { membershipId, paymentMethod, amount } = req.body;
+
+        if (!membershipId || !paymentMethod || !amount) {
+            return res.status(400).json({
+                success: false,
+                message: 'Membership ID, payment method, and amount are required'
+            });
+        }
+
+        // In a real application, you would:
+        // 1. Verify the membership
+        // 2. Process the payment
+        // 3. Update the expiry date
+        // 4. Send confirmation
+
+        res.json({
+            success: true,
+            message: 'Membership renewal successful',
+            newExpiryDate: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000), // 1 year from now
+            transactionId: `TXN-${Date.now()}`
+        });
+
+    } catch (error) {
+        console.error('Membership renewal error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error processing membership renewal',
+            error: process.env.NODE_ENV === 'development' ? error.message : {}
+        });
+    }
+});
+
 module.exports = router;

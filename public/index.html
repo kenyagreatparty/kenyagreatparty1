@@ -167,6 +167,8 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/join.html">Join KGP</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/membership-status.html">Check Status</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About Us
@@ -197,7 +199,14 @@
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/faq.html">FAQ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
                         </ul>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
                     <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
@@ -297,6 +306,68 @@
             </div>
         </section>
         <!--End Main Slider-->
+
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Search Website</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="search-form">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search for news, events, policies, or any content..." aria-label="Search">
+                                <button class="btn btn-primary" type="button" id="searchBtn">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                            <div class="search-filters">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Search in:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="news" id="searchNews" checked>
+                                            <label class="form-check-label" for="searchNews">News & Events</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="policies" id="searchPolicies" checked>
+                                            <label class="form-check-label" for="searchPolicies">Policies</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="downloads" id="searchDownloads" checked>
+                                            <label class="form-check-label" for="searchDownloads">Downloads</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Date Range:</label>
+                                        <select class="form-select" id="dateRange">
+                                            <option value="all">All Time</option>
+                                            <option value="week">Past Week</option>
+                                            <option value="month">Past Month</option>
+                                            <option value="year">Past Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Sort by:</label>
+                                        <select class="form-select" id="sortBy">
+                                            <option value="relevance">Relevance</option>
+                                            <option value="date">Date</option>
+                                            <option value="title">Title</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="searchResults" class="mt-4" style="display: none;">
+                            <h6>Search Results</h6>
+                            <div id="searchResultsList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Dynamic content will be loaded here -->
         <div id="dynamic-content">
@@ -483,6 +554,86 @@
                     header.classList.remove('scrolled');
                 }
             });
+
+            // Search functionality
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsList = document.getElementById('searchResultsList');
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            async function performSearch() {
+                const query = searchInput.value.trim();
+                if (!query) {
+                    alert('Please enter a search term');
+                    return;
+                }
+
+                const searchTypes = [];
+                if (document.getElementById('searchNews').checked) searchTypes.push('news');
+                if (document.getElementById('searchPolicies').checked) searchTypes.push('policies');
+                if (document.getElementById('searchDownloads').checked) searchTypes.push('downloads');
+
+                const dateRange = document.getElementById('dateRange').value;
+                const sortBy = document.getElementById('sortBy').value;
+
+                try {
+                    searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                    searchBtn.disabled = true;
+
+                    const response = await fetch('/api/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            query,
+                            types: searchTypes,
+                            dateRange,
+                            sortBy
+                        })
+                    });
+
+                    const results = await response.json();
+                    displaySearchResults(results);
+                } catch (error) {
+                    console.error('Search error:', error);
+                    searchResultsList.innerHTML = '<div class="alert alert-danger">Error performing search. Please try again.</div>';
+                    searchResults.style.display = 'block';
+                } finally {
+                    searchBtn.innerHTML = '<i class="fas fa-search"></i> Search';
+                    searchBtn.disabled = false;
+                }
+            }
+
+            function displaySearchResults(results) {
+                if (results.length === 0) {
+                    searchResultsList.innerHTML = '<div class="alert alert-info">No results found for your search.</div>';
+                } else {
+                    let html = '<div class="list-group">';
+                    results.forEach(result => {
+                        html += `
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">${result.title}</h6>
+                                    <small class="text-muted">${new Date(result.date).toLocaleDateString()}</small>
+                                </div>
+                                <p class="mb-1">${result.excerpt}</p>
+                                <small class="text-muted">Type: ${result.type} | <a href="${result.url}" class="text-primary">Read more</a></small>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    searchResultsList.innerHTML = html;
+                }
+                searchResults.style.display = 'block';
+            }
         });
     </script>
 </body>

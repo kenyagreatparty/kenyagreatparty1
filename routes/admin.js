@@ -8,6 +8,76 @@ const { protect, authorize } = require('../middleware/auth');
 
 const router = express.Router();
 
+// Admin role definitions
+const ADMIN_ROLES = {
+    SUPER_ADMIN: 'super_admin',
+    ADMIN: 'admin',
+    MODERATOR: 'moderator',
+    CONTENT_MANAGER: 'content_manager',
+    MEMBERSHIP_MANAGER: 'membership_manager',
+    FINANCE_MANAGER: 'finance_manager',
+    COMMUNICATION_MANAGER: 'communication_manager'
+};
+
+// Role permissions
+const ROLE_PERMISSIONS = {
+    [ADMIN_ROLES.SUPER_ADMIN]: ['*'], // All permissions
+    [ADMIN_ROLES.ADMIN]: [
+        'users.read', 'users.update', 'users.delete',
+        'memberships.read', 'memberships.update', 'memberships.delete',
+        'news.read', 'news.create', 'news.update', 'news.delete',
+        'events.read', 'events.create', 'events.update', 'events.delete',
+        'contacts.read', 'contacts.update', 'contacts.delete',
+        'analytics.read', 'reports.read'
+    ],
+    [ADMIN_ROLES.MODERATOR]: [
+        'users.read', 'users.update',
+        'memberships.read', 'memberships.update',
+        'news.read', 'news.create', 'news.update',
+        'events.read', 'events.create', 'events.update',
+        'contacts.read', 'contacts.update'
+    ],
+    [ADMIN_ROLES.CONTENT_MANAGER]: [
+        'news.read', 'news.create', 'news.update', 'news.delete',
+        'events.read', 'events.create', 'events.update', 'events.delete'
+    ],
+    [ADMIN_ROLES.MEMBERSHIP_MANAGER]: [
+        'memberships.read', 'memberships.create', 'memberships.update', 'memberships.delete',
+        'users.read', 'users.update'
+    ],
+    [ADMIN_ROLES.FINANCE_MANAGER]: [
+        'memberships.read', 'memberships.update',
+        'analytics.read', 'reports.read'
+    ],
+    [ADMIN_ROLES.COMMUNICATION_MANAGER]: [
+        'contacts.read', 'contacts.update', 'contacts.delete',
+        'news.read', 'news.create', 'news.update'
+    ]
+};
+
+// Middleware to check admin permissions
+const checkPermission = (permission) => {
+    return (req, res, next) => {
+        if (!req.user || !req.user.role) {
+            return res.status(403).json({
+                success: false,
+                message: 'Access denied. Admin role required.'
+            });
+        }
+
+        const userPermissions = ROLE_PERMISSIONS[req.user.role] || [];
+        
+        if (userPermissions.includes('*') || userPermissions.includes(permission)) {
+            next();
+        } else {
+            return res.status(403).json({
+                success: false,
+                message: 'Insufficient permissions for this action.'
+            });
+        }
+    };
+};
+
 // @desc    Get admin dashboard overview
 // @route   GET /api/admin/dashboard
 // @access  Private/Admin
@@ -380,6 +450,170 @@ router.put('/settings', protect, authorize('admin'), async (req, res) => {
       message: 'Server error while updating admin settings'
     });
   }
+});
+
+// @desc    Get all admin roles
+// @route   GET /api/admin/roles
+// @access  Private/Admin
+router.get('/roles', protect, checkPermission('users.read'), (req, res) => {
+    res.json({
+        success: true,
+        roles: ADMIN_ROLES,
+        permissions: ROLE_PERMISSIONS
+    });
+});
+
+// @desc    Get user roles and permissions
+// @route   GET /api/admin/users/:id/role
+// @access  Private/Admin
+router.get('/users/:id/role', protect, checkPermission('users.read'), async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).select('name email role');
+        
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found'
+            });
+        }
+
+        const permissions = ROLE_PERMISSIONS[user.role] || [];
+
+        res.json({
+            success: true,
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                permissions: permissions
+            }
+        });
+    } catch (error) {
+        console.error('Get user role error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error retrieving user role'
+        });
+    }
+});
+
+// @desc    Update user role
+// @route   PUT /api/admin/users/:id/role
+// @access  Private/Admin
+router.put('/users/:id/role', protect, checkPermission('users.update'), async (req, res) => {
+    try {
+        const { role } = req.body;
+
+        if (!role || !Object.values(ADMIN_ROLES).includes(role)) {
+            return res.status(400).json({
+                success: false,
+                message: 'Invalid role provided'
+            });
+        }
+
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            { role },
+            { new: true, runValidators: true }
+        ).select('name email role');
+
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: 'User not found'
+            });
+        }
+
+        res.json({
+            success: true,
+            message: 'User role updated successfully',
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                permissions: ROLE_PERMISSIONS[user.role] || []
+            }
+        });
+    } catch (error) {
+        console.error('Update user role error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error updating user role'
+        });
+    }
+});
+
+// @desc    Get role-based analytics
+// @route   GET /api/admin/analytics/roles
+// @access  Private/Admin
+router.get('/analytics/roles', protect, checkPermission('analytics.read'), async (req, res) => {
+    try {
+        const roleStats = await User.aggregate([
+            {
+                $group: {
+                    _id: '$role',
+                    count: { $sum: 1 }
+                }
+            }
+        ]);
+
+        const roleAnalytics = roleStats.map(stat => ({
+            role: stat._id || 'member',
+            count: stat.count,
+            permissions: ROLE_PERMISSIONS[stat._id] || []
+        }));
+
+        res.json({
+            success: true,
+            analytics: roleAnalytics
+        });
+    } catch (error) {
+        console.error('Role analytics error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error retrieving role analytics'
+        });
+    }
+});
+
+// @desc    Get admin activity logs
+// @route   GET /api/admin/activity-logs
+// @access  Private/Admin
+router.get('/activity-logs', protect, checkPermission('analytics.read'), async (req, res) => {
+    try {
+        const { page = 1, limit = 20, role } = req.query;
+        
+        let query = { role: { $in: Object.values(ADMIN_ROLES) } };
+        if (role) {
+            query.role = role;
+        }
+
+        const admins = await User.find(query)
+            .select('name email role lastLogin createdAt')
+            .sort({ lastLogin: -1 })
+            .limit(limit * 1)
+            .skip((page - 1) * limit);
+
+        const total = await User.countDocuments(query);
+
+        res.json({
+            success: true,
+            admins,
+            pagination: {
+                current: parseInt(page),
+                pages: Math.ceil(total / limit),
+                total
+            }
+        });
+    } catch (error) {
+        console.error('Activity logs error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error retrieving activity logs'
+        });
+    }
 });
 
 module.exports = router;
