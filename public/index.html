@@ -103,10 +103,10 @@
         .faq-answer.show {
             display: block;
         }
-        .faq-question i {
+        .faq-icon {
             transition: transform 0.3s ease;
         }
-        .faq-question i.rotated {
+        .faq-icon.rotated {
             transform: rotate(180deg);
         }
         .search-btn-custom {
@@ -1369,7 +1369,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How do I become a member of the Kenya Great Party?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>To become a member, you need to:</p>
@@ -1385,7 +1385,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>What are the membership fees?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>Membership fees are as follows:</p>
@@ -1401,7 +1401,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How can I check my membership status?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>You can check your membership status by:</p>
@@ -1416,7 +1416,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How do I resign from the party?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>To resign from the party, you can:</p>
@@ -1436,7 +1436,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How can I participate in party activities?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>As a member, you can participate in various ways:</p>
@@ -1452,7 +1452,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How often are party meetings held?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>Party meetings are held at different levels:</p>
@@ -1473,7 +1473,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>How can I contact the party leadership?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>You can contact the party leadership through:</p>
@@ -1489,7 +1489,7 @@
                             <div class="faq-item mb-3">
                                 <button class="faq-question" >
                                     <span>Where are the party offices located?</span>
-                                    <i class="fas fa-chevron-down"></i>
+                                    <i class="fas fa-chevron-down faq-icon"></i>
                                 </button>
                                 <div class="faq-answer">
                                     <p>We have offices in:</p>
@@ -1830,7 +1830,7 @@
         // FAQ Toggle Function - Global scope
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
-            const icon = button.querySelector('i');
+            const icon = button.querySelector('.faq-icon');
             
             if (!answer || !icon) {
                 return;
@@ -1843,9 +1843,9 @@
                 }
             });
             
-            document.querySelectorAll('.faq-question i').forEach(icon => {
-                if (icon !== button.querySelector('i')) {
-                    icon.classList.remove('rotated');
+            document.querySelectorAll('.faq-icon').forEach(item => {
+                if (item !== icon) {
+                    item.classList.remove('rotated');
                 }
             });
             
