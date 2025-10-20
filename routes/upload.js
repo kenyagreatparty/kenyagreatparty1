@@ -6,32 +6,53 @@ const { protect, authorize } = require('../middleware/auth');
 
 const router = express.Router();
 
-// Ensure uploads directory exists
+// Ensure uploads directory exists (only in non-serverless environments)
 const uploadsDir = path.join(__dirname, '../uploads');
-if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
+
+// Check if we're in a serverless environment (Vercel, Netlify, etc.)
+const isServerless = process.env.VERCEL || process.env.NETLIFY || process.env.AWS_LAMBDA_FUNCTION_NAME;
+
+if (!isServerless && !fs.existsSync(uploadsDir)) {
+  try {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  } catch (error) {
+    console.warn('Could not create uploads directory:', error.message);
+  }
 }
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    let uploadPath = uploadsDir;
-    
-    // Create subdirectories based on file type
-    if (file.mimetype.startsWith('image/')) {
-      uploadPath = path.join(uploadsDir, 'images');
-    } else if (file.mimetype.includes('pdf') || file.mimetype.includes('document')) {
-      uploadPath = path.join(uploadsDir, 'documents');
+    // In serverless environments, use memory storage or temp directory
+    if (isServerless) {
+      // Use /tmp directory which is writable in serverless environments
+      cb(null, '/tmp');
     } else {
-      uploadPath = path.join(uploadsDir, 'others');
+      let uploadPath = uploadsDir;
+      
+      // Create subdirectories based on file type
+      if (file.mimetype.startsWith('image/')) {
+        uploadPath = path.join(uploadsDir, 'images');
+      } else if (file.mimetype.includes('pdf') || file.mimetype.includes('document')) {
+        uploadPath = path.join(uploadsDir, 'documents');
+      } else {
+        uploadPath = path.join(uploadsDir, 'others');
+      }
+      
+      // Create directory if it doesn't exist
+      if (!fs.existsSync(uploadPath)) {
+        try {
+          fs.mkdirSync(uploadPath, { recursive: true });
+        } catch (error) {
+          console.warn('Could not create upload directory:', error.message);
+          // Fallback to temp directory
+          cb(null, '/tmp');
+          return;
+        }
+      }
+      
+      cb(null, uploadPath);
     }
-    
-    // Create directory if it doesn't exist
-    if (!fs.existsSync(uploadPath)) {
-      fs.mkdirSync(uploadPath, { recursive: true });
-    }
-    
-    cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
     // Generate unique filename
@@ -76,7 +97,8 @@ router.post('/single', protect, authorize('admin'), upload.single('file'), (req,
       });
     }
 
-    const fileUrl = `/uploads/${req.file.filename}`;
+    // Generate appropriate file URL based on environment
+    const fileUrl = isServerless ? `/tmp/${req.file.filename}` : `/uploads/${req.file.filename}`;
     
     res.json({
       success: true,
@@ -115,7 +137,7 @@ router.post('/multiple', protect, authorize('admin'), upload.array('files', 10),
       originalName: file.originalname,
       size: file.size,
       mimetype: file.mimetype,
-      url: `/uploads/${file.filename}`
+      url: isServerless ? `/tmp/${file.filename}` : `/uploads/${file.filename}`
     }));
     
     res.json({
@@ -154,7 +176,7 @@ router.post('/image', protect, authorize('admin'), upload.single('image'), (req,
       });
     }
 
-    const imageUrl = `/uploads/images/${req.file.filename}`;
+    const imageUrl = isServerless ? `/tmp/${req.file.filename}` : `/uploads/images/${req.file.filename}`;
     
     res.json({
       success: true,
@@ -199,7 +221,7 @@ router.post('/document', protect, authorize('admin'), upload.single('document'),
       });
     }
 
-    const documentUrl = `/uploads/documents/${req.file.filename}`;
+    const documentUrl = isServerless ? `/tmp/${req.file.filename}` : `/uploads/documents/${req.file.filename}`;
     
     res.json({
       success: true,
@@ -237,7 +259,9 @@ router.delete('/:filename', protect, authorize('admin'), (req, res) => {
     }
 
     // Try to find and delete the file in different directories
-    const possiblePaths = [
+    const possiblePaths = isServerless ? [
+      path.join('/tmp', filename)
+    ] : [
       path.join(uploadsDir, 'images', filename),
       path.join(uploadsDir, 'documents', filename),
       path.join(uploadsDir, 'others', filename),
@@ -279,12 +303,14 @@ router.delete('/:filename', protect, authorize('admin'), (req, res) => {
 router.get('/list', protect, authorize('admin'), (req, res) => {
   try {
     const { type } = req.query;
-    let searchPath = uploadsDir;
+    let searchPath = isServerless ? '/tmp' : uploadsDir;
     
-    if (type === 'images') {
-      searchPath = path.join(uploadsDir, 'images');
-    } else if (type === 'documents') {
-      searchPath = path.join(uploadsDir, 'documents');
+    if (!isServerless) {
+      if (type === 'images') {
+        searchPath = path.join(uploadsDir, 'images');
+      } else if (type === 'documents') {
+        searchPath = path.join(uploadsDir, 'documents');
+      }
     }
 
     if (!fs.existsSync(searchPath)) {
@@ -303,7 +329,7 @@ router.get('/list', protect, authorize('admin'), (req, res) => {
         size: stats.size,
         created: stats.birthtime,
         modified: stats.mtime,
-        url: `/uploads/${type ? type + '/' : ''}${filename}`
+        url: isServerless ? `/tmp/${filename}` : `/uploads/${type ? type + '/' : ''}${filename}`
       };
     });
 
