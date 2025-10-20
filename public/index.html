@@ -1367,7 +1367,7 @@
                             <h4 class="mb-4 text-primary">Membership</h4>
                             
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How do I become a member of the Kenya Great Party?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1383,7 +1383,7 @@
                             </div>
 
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>What are the membership fees?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1399,7 +1399,7 @@
                             </div>
 
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How can I check my membership status?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1414,7 +1414,7 @@
                             </div>
 
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How do I resign from the party?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1434,7 +1434,7 @@
                             <h4 class="mb-4 text-primary">Party Activities</h4>
                             
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How can I participate in party activities?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1450,7 +1450,7 @@
                             </div>
 
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How often are party meetings held?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1471,7 +1471,7 @@
                             <h4 class="mb-4 text-primary">Contact & Support</h4>
                             
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>How can I contact the party leadership?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1487,7 +1487,7 @@
                             </div>
 
                             <div class="faq-item mb-3">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                <button class="faq-question" >
                                     <span>Where are the party offices located?</span>
                                     <i class="fas fa-chevron-down"></i>
                                 </button>
@@ -1735,6 +1735,14 @@
                 }
             });
 
+            // FAQ Event Listeners - Add click listeners to all FAQ buttons
+            const faqButtons = document.querySelectorAll('.faq-question');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    toggleFAQ(this);
+                });
+            });
+
             // Search functionality
             const searchBtn = document.getElementById('searchBtn');
             const searchInput = document.getElementById('searchInput');
@@ -1821,13 +1829,10 @@
 
         // FAQ Toggle Function - Global scope
         function toggleFAQ(button) {
-            console.log('FAQ toggle clicked'); // Debug log
-            
             const answer = button.nextElementSibling;
             const icon = button.querySelector('i');
             
             if (!answer || !icon) {
-                console.error('FAQ elements not found');
                 return;
             }
             
@@ -1847,8 +1852,6 @@
             // Toggle current FAQ item
             answer.classList.toggle('show');
             icon.classList.toggle('rotated');
-            
-            console.log('FAQ toggled:', answer.classList.contains('show')); // Debug log
         }
     </script>
 
