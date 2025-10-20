@@ -491,12 +491,7 @@
 
         <!--Start Google Map-->
         <section class="google-map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818917120402!2d36.81679081475403!3d-1.2833562990629387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22f28f0c1%3A0x2b8e3858d5e8d7b7!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1624451234567!5m2!1sen!2sus"
-                class="contact-page-map"
-                allowfullscreen
-                loading="lazy">
-            </iframe>
+            <div id="map" style="height: 400px; width: 100%;"></div>
         </section>
         <!--End Google Map-->
 
@@ -716,7 +711,53 @@
     <script src="js/api.js"></script>
     <script src="js/app.js"></script>
 
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dOWWgUjKq8JhYc&callback=initMap"></script>
+    
     <script>
+        // Initialize Google Map
+        function initMap() {
+            // Nairobi, Kenya coordinates
+            const nairobi = { lat: -1.2833, lng: 36.8167 };
+            
+            // Create map
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: nairobi,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+            
+            // Add marker
+            const marker = new google.maps.Marker({
+                position: nairobi,
+                map: map,
+                title: "Kenya Great Party Headquarters",
+                animation: google.maps.Animation.DROP
+            });
+            
+            // Add info window
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h4 style="margin: 0 0 10px 0; color: #333;">Kenya Great Party</h4>
+                        <p style="margin: 0; color: #666;">Nairobi, Kenya</p>
+                        <p style="margin: 5px 0 0 0; color: #666;">+254 729554475</p>
+                    </div>
+                `
+            });
+            
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector('.floating-header');
             window.addEventListener('scroll', function() {

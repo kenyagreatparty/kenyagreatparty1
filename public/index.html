@@ -180,71 +180,6 @@
 
 <body>
 
-    <!-- Start Preloader -->
-    <div class="loader-wrap">
-        <div class="preloader">
-            <div class="preloader-close">x</div>
-            <div id="handle-preloader" class="handle-preloader">
-                <div class="animation-preloader">
-                    <div class="spinner"><img class="ms-5 df" src="./assets/images/favicons/kgp3-rotated.png" alt="KGP Logo" height="130"></div>
-                    <div class="txt-loading">
-                        <span data-text-preloader="k" class="letters-loading">
-                            k
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="n" class="letters-loading">
-                            n
-                        </span>
-                        <span data-text-preloader="y" class="letters-loading">
-                            y
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span>
-                          
-                        </span>
-                        <span data-text-preloader="g" class="letters-loading">
-                            g
-                        </span>
-                        <span data-text-preloader="r" class="letters-loading">
-                            r
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span data-text-preloader="t" class="letters-loading">
-                            t
-                        </span>
-                        <span>
-                          
-                        </span>
-                        <span data-text-preloader="p" class="letters-loading">
-                            p
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span data-text-preloader="r" class="letters-loading">
-                            r
-                        </span>
-                        <span data-text-preloader="t" class="letters-loading">
-                            t
-                        </span>
-                        <span data-text-preloader="y" class="letters-loading">
-                            y
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Preloader -->
 
     <div class="page-wrapper">
         <!--Start Main Header One-->
@@ -1886,8 +1821,15 @@
 
         // FAQ Toggle Function - Global scope
         function toggleFAQ(button) {
+            console.log('FAQ toggle clicked'); // Debug log
+            
             const answer = button.nextElementSibling;
             const icon = button.querySelector('i');
+            
+            if (!answer || !icon) {
+                console.error('FAQ elements not found');
+                return;
+            }
             
             // Close all other FAQ items
             document.querySelectorAll('.faq-answer').forEach(item => {
@@ -1905,6 +1847,8 @@
             // Toggle current FAQ item
             answer.classList.toggle('show');
             icon.classList.toggle('rotated');
+            
+            console.log('FAQ toggled:', answer.classList.contains('show')); // Debug log
         }
     </script>
 
