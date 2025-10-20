@@ -740,8 +740,13 @@
 
 
   $(document).ready(function () {
-    if (!$.browser.webkit) {
-      $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+    // Check for webkit browsers using modern approach
+    var isWebkit = /webkit/i.test(navigator.userAgent);
+    if (!isWebkit) {
+      // Only show message for very old browsers, modern browsers are fine
+      if (/MSIE|Trident/i.test(navigator.userAgent)) {
+        $('.wrapper').html('<p>Please use a modern browser for the best experience.</p>');
+      }
     }
   });
 

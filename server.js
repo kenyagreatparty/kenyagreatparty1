@@ -24,8 +24,22 @@ const searchRoutes = require('./routes/search');
 
 const app = express();
 
-// Security middleware
-app.use(helmet());
+// Security middleware with CSP configuration
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdnjs.cloudflare.com"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://maps.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
+      imgSrc: ["'self'", "data:", "https:", "blob:"],
+      connectSrc: ["'self'", "https://maps.googleapis.com"],
+      frameSrc: ["'self'", "https://maps.google.com"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  },
+}));
 app.use(compression());
 
 // Rate limiting (adjust for serverless)
