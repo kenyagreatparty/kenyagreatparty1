@@ -56,6 +56,48 @@
             --thm-base: #ADD8E6;
             --thm-base-rgb: 173, 216, 230;
         }
+        .publication-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        .publication-card__icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--thm-base), #87CEEB);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .publication-card__icon i {
+            font-size: 24px;
+            color: #fff;
+        }
+        .publication-card__content h4 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .publication-card__content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        .publication-card__content .btn {
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+        }
         .floating-header {
             position: fixed;
             top: 1rem;
@@ -237,6 +279,95 @@
             </div>
         </section>
         <!--End Breadcrumb Style1-->
+
+        <!--Start Publications Section-->
+        <section class="publications-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="section-title text-center">
+                            <h2>Publications</h2>
+                            <p>Official documents, reports, and publications from the Kenya Great Party</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Party Constitution</h4>
+                                <p>The official constitution of the Kenya Great Party outlining our principles, structure, and governance.</p>
+                                <a href="/downloads.html#constitution" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Manifesto 2027</h4>
+                                <p>Our comprehensive manifesto outlining our vision and plans for Kenya's future development.</p>
+                                <a href="/downloads.html#manifesto" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Annual Report 2024</h4>
+                                <p>Comprehensive report on our party's activities, achievements, and financial status for 2024.</p>
+                                <a href="/downloads.html#annual-report" class="btn btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Policy Papers</h4>
+                                <p>Detailed policy papers on key issues including education, healthcare, and economic development.</p>
+                                <a href="/downloads.html#policies" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Party Newsletter</h4>
+                                <p>Monthly newsletter featuring party updates, member spotlights, and upcoming events.</p>
+                                <a href="/downloads.html#newsletter" class="btn btn-primary">Read</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="publication-card">
+                            <div class="publication-card__icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="publication-card__content">
+                                <h4>Partnership Agreements</h4>
+                                <p>Official partnership agreements and memoranda of understanding with other organizations.</p>
+                                <a href="/downloads.html#partnerships" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Publications Section-->
 
         <!--Start Blog Standard-->
         <section class="blog-standard">
