@@ -60,8 +60,8 @@
             top: 1rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 91.66%;
-            max-width: 1024px;
+            width: 95%;
+            max-width: 1200px;
             z-index: 1030;
             transition: all 0.3s ease-in-out;
         }
@@ -71,6 +71,7 @@
             border-radius: 50rem;
             padding: 0.5rem 1.5rem;
             transition: all 0.3s ease-in-out;
+            min-height: 60px;
         }
         .floating-header.scrolled .navbar {
             padding: 0.25rem 1rem;
@@ -107,6 +108,40 @@
         }
         .faq-question i.rotated {
             transform: rotate(180deg);
+        }
+        .search-btn-custom {
+            background: none !important;
+            border: none !important;
+            color: white !important;
+            padding: 0.5rem !important;
+            border-radius: 50% !important;
+            transition: all 0.3s ease;
+        }
+        .search-btn-custom:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            transform: scale(1.1);
+        }
+        .navbar-nav .nav-link {
+            padding: 0.5rem 0.75rem !important;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 991.98px) {
+            .navbar-nav .nav-link {
+                padding: 0.5rem 0.5rem !important;
+                font-size: 0.85rem;
+            }
+            .floating-header {
+                width: 98%;
+            }
+        }
+        @media (max-width: 768px) {
+            .floating-header .navbar {
+                padding: 0.5rem 1rem;
+            }
+            .navbar-nav .nav-link {
+                padding: 0.4rem 0.4rem !important;
+                font-size: 0.8rem;
+            }
         }
         .logo-circle {
             left: -5px;
@@ -264,7 +299,7 @@
                             <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
                         </ul>
                         <div class="d-flex align-items-center">
-                            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <button class="search-btn-custom me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
@@ -1847,29 +1882,30 @@
                 searchResults.style.display = 'block';
             }
 
-            // FAQ Toggle Function
-            function toggleFAQ(button) {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-answer').forEach(item => {
-                    if (item !== answer) {
-                        item.classList.remove('show');
-                    }
-                });
-                
-                document.querySelectorAll('.faq-question i').forEach(icon => {
-                    if (icon !== button.querySelector('i')) {
-                        icon.classList.remove('rotated');
-                    }
-                });
-                
-                // Toggle current FAQ item
-                answer.classList.toggle('show');
-                icon.classList.toggle('rotated');
-            }
         });
+
+        // FAQ Toggle Function - Global scope
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('show');
+                }
+            });
+            
+            document.querySelectorAll('.faq-question i').forEach(icon => {
+                if (icon !== button.querySelector('i')) {
+                    icon.classList.remove('rotated');
+                }
+            });
+            
+            // Toggle current FAQ item
+            answer.classList.toggle('show');
+            icon.classList.toggle('rotated');
+        }
     </script>
 
 </body>
