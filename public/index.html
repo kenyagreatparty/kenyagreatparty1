@@ -72,6 +72,39 @@
         .floating-header.scrolled .navbar {
             padding: 0.25rem 1rem;
         }
+        .faq-question {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        .faq-answer {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-question i.rotated {
+            transform: rotate(180deg);
+        }
         .logo-circle {
             left: -5px;
             top: 2px;
@@ -157,7 +190,7 @@
                 <div class="container-fluid px-0">
                     <a class="navbar-brand d-flex align-items-center" href="/">
                         <div class="logo-circle me-2">
-                            <img class="ms-20 df" src="./assets/images/favicons/kgp2-upright.png" alt="KGP Logo" height="180">
+                            <img src="assets/images/favicons/kgp2-upright.png" alt="KGP Logo" class="img-fluid" style="max-width: 2.5rem; height: auto;">
                         </div>
                         <span class="d-none d-md-inline ms-4">Kenya Great Party</span>
                     </a>
@@ -181,25 +214,26 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    News
+                                    News & Events
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="newsDropdown">
                                     <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
                                     <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#publications">Publications</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Downloads
+                                    Resources
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
                                     <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
                                     <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
                                     <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#constitution">Constitution</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/faq.html">FAQ</a></li>
                             <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
                         </ul>
                         <div class="d-flex align-items-center">
@@ -374,6 +408,313 @@
             <!-- Content will be loaded via JavaScript -->
         </div>
 
+        <!--Start Team Style1-->
+        <section class="team-style1">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <div class="sub-title">
+                        <h6>Party Officials</h6>
+                    </div>
+                    <h2>Meet KGP Party<br> Officials</h2>
+                </div>
+                <div class="row">
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".1s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img1.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Halima Hassan</a></h2>
+                                    <p>Secretary General</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img2.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Kimani Williams</a></h2>
+                                    <p>National Treasurer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img3.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Silvya Anyango</a></h2>
+                                    <p>National Chairman</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+
+                    <!--Start Team Style1 Single-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                        <div class="team-style1__single">
+                            <div class="team-style1__single-img">
+                                <div class="team-style1__single-img-inner">
+                                    <img src="assets/images/team/team-v1-img4.jpg" alt="#">
+                                </div>
+
+                                <ul class="social-links clearfix">
+                                    <li><a href="mailto:yourmail@email.com"><span class="icon-mail-1"></span></a>
+                                    </li>
+                                    <li class="share"><a href="#"><span class="icon-share"></span></a>
+                                        <ul class="social-links-inner">
+                                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                                            <li><a href="#"><i class="icon-twitter"></i></a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-facebook-app-symbol"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="tel:1234567890"><span class="icon-telephone"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="team-stye1__single-content text-center">
+                                <div class="inner-box">
+                                    <div class="round-bg"></div>
+                                    <h2><a href="team-details.html">Brendan Wafula</a></h2>
+                                    <p>Leader Operations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End Team Style1 Single-->
+                </div>
+            </div>
+        </section>
+        <!--End Team Style1-->
+
+        <!--Start FAQ Section-->
+        <section class="faq-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-3">Frequently Asked Questions</h2>
+                            <p class="text-muted">Find answers to common questions about the Kenya Great Party</p>
+                        </div>
+
+                        <!-- Membership FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Membership</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How do I become a member of the Kenya Great Party?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To become a member, you need to:</p>
+                                    <ul>
+                                        <li>Fill out the membership application form on our website</li>
+                                        <li>Provide valid identification documents</li>
+                                        <li>Pay the required membership fee</li>
+                                        <li>Complete the verification process</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>What are the membership fees?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Membership fees are as follows:</p>
+                                    <ul>
+                                        <li>Ordinary Member: KSh 100/year</li>
+                                        <li>Youth Member (18-35): KSh 50/year</li>
+                                        <li>Student Member: KSh 25/year</li>
+                                        <li>Life Member: KSh 5,000 (one-time)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I check my membership status?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can check your membership status by:</p>
+                                    <ul>
+                                        <li>Visiting our membership status page</li>
+                                        <li>Entering your ID number and phone number</li>
+                                        <li>Contacting our membership office directly</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How do I resign from the party?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To resign from the party, you can:</p>
+                                    <ul>
+                                        <li>Submit a resignation request through our website</li>
+                                        <li>Visit any KGP office with your ID</li>
+                                        <li>Send a written resignation letter to our headquarters</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Party Activities FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Party Activities</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I participate in party activities?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>As a member, you can participate in various ways:</p>
+                                    <ul>
+                                        <li>Attend local branch meetings</li>
+                                        <li>Volunteer for party events and campaigns</li>
+                                        <li>Join specialized committees</li>
+                                        <li>Participate in policy discussions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How often are party meetings held?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Party meetings are held at different levels:</p>
+                                    <ul>
+                                        <li>Local branch meetings: Monthly</li>
+                                        <li>County meetings: Quarterly</li>
+                                        <li>National meetings: Annually</li>
+                                        <li>Special meetings: As needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Contact & Support</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I contact the party leadership?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can contact the party leadership through:</p>
+                                    <ul>
+                                        <li>Email: info@kenyagreatparty.org</li>
+                                        <li>Phone: +254 20 123 4567</li>
+                                        <li>Visit our headquarters in Nairobi</li>
+                                        <li>Contact your local branch office</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Where are the party offices located?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We have offices in:</p>
+                                    <ul>
+                                        <li>Nairobi (Headquarters)</li>
+                                        <li>Mombasa</li>
+                                        <li>Kisumu</li>
+                                        <li>Nakuru</li>
+                                        <li>Eldoret</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End FAQ Section-->
+
         <!--Start footer area -->
         <footer class="footer-area">
             <div class="footer-area__shape1">
@@ -389,7 +730,7 @@
                                 <div class="our-company-info">
                                     <div class="footer-logo-style1">
                                         <a href="/">
-                                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" title="" width="100">
+                                            <img src="assets/images/favicons/kgp2-upright.png" alt="KGP Logo" title="" width="100">
                                         </a>
                                     </div>
                                     <div class="our-company-info__text">
@@ -633,6 +974,29 @@
                     searchResultsList.innerHTML = html;
                 }
                 searchResults.style.display = 'block';
+            }
+
+            // FAQ Toggle Function
+            function toggleFAQ(button) {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer) {
+                        item.classList.remove('show');
+                    }
+                });
+                
+                document.querySelectorAll('.faq-question i').forEach(icon => {
+                    if (icon !== button.querySelector('i')) {
+                        icon.classList.remove('rotated');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                answer.classList.toggle('show');
+                icon.classList.toggle('rotated');
             }
         });
     </script>

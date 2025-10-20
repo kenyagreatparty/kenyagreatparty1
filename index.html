@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenya Great Party (KGP) - Official Website</title>
     <!-- Favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
@@ -13,9 +12,7 @@
     <meta name="description" content="Kenya Great Party - Building a Brighter Future for Kenya" />
 
     <!-- fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/vendors/animate/animate.min.css" />
     <link rel="stylesheet" href="assets/vendors/animate/custom-animate.css" />
@@ -75,6 +72,39 @@
         .floating-header.scrolled .navbar {
             padding: 0.25rem 1rem;
         }
+        .faq-question {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        .faq-answer {
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .faq-answer.show {
+            display: block;
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        .faq-question i.rotated {
+            transform: rotate(180deg);
+        }
         .logo-circle {
             left: -5px;
             top: 2px;
@@ -107,11 +137,20 @@
                 max-height: 256px;
             }
         }
+        .alert {
+            display: none;
+            margin-top: 1rem;
+        }
+        .loading {
+            display: none;
+        }
+        .loading.show {
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
-
     <!-- Start Preloader -->
     <div class="loader-wrap">
         <div class="preloader">
@@ -120,57 +159,23 @@
                 <div class="animation-preloader">
                     <div class="spinner"><img class="ms-5 df" src="./assets/images/favicons/kgp3-rotated.png" alt="KGP Logo" height="130"></div>
                     <div class="txt-loading">
-                        <span data-text-preloader="k" class="letters-loading">
-                            k
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="n" class="letters-loading">
-                            n
-                        </span>
-                        <span data-text-preloader="y" class="letters-loading">
-                            y
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span>
-                          
-                        </span>
-                        <span data-text-preloader="g" class="letters-loading">
-                            g
-                        </span>
-                        <span data-text-preloader="r" class="letters-loading">
-                            r
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span data-text-preloader="t" class="letters-loading">
-                            t
-                        </span>
-                        <span>
-                          
-                        </span>
-                        <span data-text-preloader="p" class="letters-loading">
-                            p
-                        </span>
-                        <span data-text-preloader="a" class="letters-loading">
-                            a
-                        </span>
-                        <span data-text-preloader="r" class="letters-loading">
-                            r
-                        </span>
-                        <span data-text-preloader="t" class="letters-loading">
-                            t
-                        </span>
-                        <span data-text-preloader="y" class="letters-loading">
-                            y
-                        </span>
+                        <span data-text-preloader="k" class="letters-loading">k</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="n" class="letters-loading">n</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span> </span>
+                        <span data-text-preloader="g" class="letters-loading">g</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="e" class="letters-loading">e</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span> </span>
+                        <span data-text-preloader="p" class="letters-loading">p</span>
+                        <span data-text-preloader="a" class="letters-loading">a</span>
+                        <span data-text-preloader="r" class="letters-loading">r</span>
+                        <span data-text-preloader="t" class="letters-loading">t</span>
+                        <span data-text-preloader="y" class="letters-loading">y</span>
                     </div>
                 </div>
             </div>
@@ -183,9 +188,9 @@
         <header class="floating-header">
             <nav class="navbar navbar-expand-md navbar-dark">
                 <div class="container-fluid px-0">
-                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <a class="navbar-brand d-flex align-items-center" href="/">
                         <div class="logo-circle me-2">
-                            <img class="ms-20 df" src="./assets/images/favicons/kgp2-upright.png" alt="KGP Logo" height="180">
+                            <img src="assets/images/favicons/kgp2-upright.png" alt="KGP Logo" class="img-fluid" style="max-width: 2.5rem; height: auto;">
                         </div>
                         <span class="d-none d-md-inline ms-4">Kenya Great Party</span>
                     </a>
@@ -194,40 +199,50 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/join.html">Join KGP</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/membership-status.html">Check Status</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     About Us
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                                    <li><a class="dropdown-item" href="about.html#history">History</a></li>
-                                    <li><a class="dropdown-item" href="about.html#values">Values</a></li>
-                                    <li><a class="dropdown-item" href="about.html#team">Our Team</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#history">History</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#values">Values</a></li>
+                                    <li><a class="dropdown-item" href="/about.html#team">Our Team</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    News
+                                    News & Events
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="newsDropdown">
-                                    <li><a class="dropdown-item" href="news.html#events">Events</a></li>
-                                    <li><a class="dropdown-item" href="news.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#events">Events</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/news.html#publications">Publications</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="downloadsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Downloads
+                                    Resources
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="downloadsDropdown">
-                                    <li><a class="dropdown-item" href="downloads.html#notices">Notices</a></li>
-                                    <li><a class="dropdown-item" href="downloads.html#tenders">Tenders</a></li>
-                                    <li><a class="dropdown-item" href="downloads.html#financial-statements">Financial Statements</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#notices">Notices</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#tenders">Tenders</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#financial-statements">Financial Statements</a></li>
+                                    <li><a class="dropdown-item" href="/downloads.html#constitution">Constitution</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
                         </ul>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                    <a href="join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
+                    <a href="/join.html" class="btn btn-outline-light rounded-pill d-none d-md-block">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
                             <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                             <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
@@ -260,7 +275,6 @@
                 "delay": 5000
                 }}'>
                 <div class="swiper-wrapper">
-
                     <!--Start Single Swiper Slide-->
                     <div class="swiper-slide">
                         <div class="image-layer" style="background-image: url(assets/images/slides/slide-v1-1.jpg);">
@@ -276,7 +290,7 @@
                                             <p>Join us in our mission to create a prosperous and united Kenya <br> through visionary leadership and inclusive policies.</p>
                                         </div>
                                         <div class="btn-box">
-                                            <a class="btn-one" href="#">
+                                            <a class="btn-one" href="/about.html">
                                                 <span class="txt">Learn More</span>
                                             </a>
                                         </div>
@@ -302,7 +316,7 @@
                                             <p>KGP is committed to creating opportunities and improving lives <br> across all sectors of our society.</p>
                                         </div>
                                         <div class="btn-box">
-                                            <a class="btn-one" href="#">
+                                            <a class="btn-one" href="/join.html">
                                                 <span class="txt">Join Our Cause</span>
                                             </a>
                                         </div>
@@ -312,7 +326,6 @@
                         </div>
                     </div>
                     <!--End Single Swiper Slide-->
-
                 </div>
 
                 <!-- If we need navigation buttons -->
@@ -320,814 +333,80 @@
                     <div class="swiper-button-prev" id="main-slider__swiper-button-next">
                         <i class="icon-left-arrow"></i>
                     </div>
-                    <div  class="swiper-button-next" id="main-slider__swiper-button-prev">
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
                         <i class="icon-right-arrow"></i>
                     </div>
                 </div>
-
             </div>
         </section>
         <!--End Main Slider-->
 
-        <!--Start Features Style1-->
-        <section class="features-style1">
-            <div class="shape1 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="3500ms"></div>
-            <div class="shape2"><img src="assets/images/shapes/features-v1-shape1.png" alt="#"></div>
-            <div class="auto-container">
-                <div class="features-style1__inner">
-                    <div class="row">
-                        <!--Start Features Style1 Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="00ms"
-                            data-wow-duration="1500ms">
-                            <div class="features-style1__single">
-                                <div class="features-style1__single-icon">
-                                    <span class="icon-growth"><i class="fas fa-chart-line" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
-                                </div>
-
-                                <div class="features-style1__single-content">
-                                    <h3><a href="#">Economic Growth</a></h3>
-                                    <p>We aim to boost Kenya's economy through sustainable development and job creation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Features Style1 Single-->
-
-                        <!--Start Features Style1 Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms"
-                            data-wow-duration="1500ms">
-                            <div class="features-style1__single">
-                                <div class="features-style1__single-icon">
-                                    <span class="icon-mortarboard"><i class="fas fa-mortar-board" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
-                                </div>
-
-                                <div class="features-style1__single-content">
-                                    <h3><a href="#">Education for All</a></h3>
-                                    <p>Ensuring quality education and skills training for every Kenyan citizen.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Features Style1 Single-->
-
-                        <!--Start Features Style1 Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms"
-                            data-wow-duration="1500ms">
-                            <div class="features-style1__single">
-                                <div class="features-style1__single-icon">
-                                    <span class="icon-stethoscope"><i class="fas fa-stethoscope" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
-                                </div>
-
-                                <div class="features-style1__single-content">
-                                    <h3><a href="#">Healthcare Reform</a></h3>
-                                    <p>Improving access to quality healthcare services across the nation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Features Style1 Single-->
-
-                        <!--Start Features Style1 Single-->
-                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms"
-                            data-wow-duration="1500ms">
-                            <div class="features-style1__single">
-                                <div class="features-style1__single-icon">
-                                    <span class=""><i class="fas fa-leaf" style="font-size:50px;color:rgb(255, 255, 255)"></i></span>
-                                </div>
-                                <div class="features-style1__single-content">
-                                    <h3><a href="#">Environmental Conservation</a></h3>
-                                    <p>Protecting Kenya's natural resources and promoting sustainable practices.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Features Style1 Single-->
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Search Website</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!--End Features Style1-->
-
-        <!--Start About Style1-->
-        <section class="about-style1">
-            <div class="auto-container">
-                <div class="row">
-
-                    <div class="col-xl-6">
-                        <div class="about-style1__content">
-                            <div class="sec-title">
-                                <div class="sub-title">
-                                    <h6>About Party Leader</h6>
+                    <div class="modal-body">
+                        <div class="search-form">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="searchInput" placeholder="Search for news, events, policies, or any content..." aria-label="Search">
+                                <button class="btn btn-primary" type="button" id="searchBtn">
+                                    <i class="fas fa-search"></i> Search
+                                </button>
+                            </div>
+                            <div class="search-filters">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label class="form-label">Search in:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="news" id="searchNews" checked>
+                                            <label class="form-check-label" for="searchNews">News & Events</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="policies" id="searchPolicies" checked>
+                                            <label class="form-check-label" for="searchPolicies">Policies</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="downloads" id="searchDownloads" checked>
+                                            <label class="form-check-label" for="searchDownloads">Downloads</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Date Range:</label>
+                                        <select class="form-select" id="dateRange">
+                                            <option value="all">All Time</option>
+                                            <option value="week">Past Week</option>
+                                            <option value="month">Past Month</option>
+                                            <option value="year">Past Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label">Sort by:</label>
+                                        <select class="form-select" id="sortBy">
+                                            <option value="relevance">Relevance</option>
+                                            <option value="date">Date</option>
+                                            <option value="title">Title</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <h2>Meet Our <span>Visionary</span> <br> Leader for Kenya's <br>Future</h2>
-                            </div>
-                            <div class="about-style1__content-text">
-                                <p>Our party leader is committed to driving positive change in Kenya. With years of experience in public service and a deep understanding of our nation's challenges, they are dedicated to uniting Kenyans and working towards a prosperous future for all.</p>
-                            </div>
-                            <div class="about-style1__content-signature">
-                                <img src="assets/images/resources/about-v1-signature.png" alt="#">
-                            </div>
-                            <ul class="about-style1__content-list">
-                                <li>
-                                    <div class="icon-box">
-                                        <span class="icon-check"></span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Proven track record of leadership</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="icon-box">
-                                        <span class="icon-check"></span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Commitment to transparency and accountability</p>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="icon-box">
-                                        <span class="icon-check"></span>
-                                    </div>
-                                    <div class="text-box">
-                                        <p>Vision for a united and prosperous Kenya</p>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="about-style1__content-btn">
-                                <a class="btn-one" href="about.html">
-                                    <span class="txt">Learn More</span>
-                                </a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-xl-6">
-                        <div class="about-style1__img">
-                            <div class="shape1 float-bob-y"><img src="assets/images/shapes/thm-shape1.png" alt="#">
-                            </div>
-                            <div class="shape2 rotate-m"><img src="assets/images/shapes/thm-shape1.png" alt="#"></div>
-                            <div class="shape3"></div>
-                            <div class="about-style1__img-inner">
-                                <img src="assets/images/about/about-v1-img1.png" alt="#">
-                            </div>
-                            <div class="experience-box text-center">
-                                <h2>
-                                    <span class="odometer" data-count="10">00</span>
-                                </h2>
-                                <div class="title">
-                                    <h3> Years Of <br> Experience</h3>
-                                </div>
-                            </div>
-
-                            <div class="about-style1__img-client-info">
-                                <h3>David Master</h3>
-                                <p>KGP Party Leader</p>
-                            </div>
+                        <div id="searchResults" class="mt-4" style="display: none;">
+                            <h6>Search Results</h6>
+                            <div id="searchResultsList"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--End About Style1-->
+        </div>
 
-        <!--Start Services Style1-->
-        <section class="services-style1">
-            <div class="shape1"></div>
-            <div class="shape2 rotate-m"><img src="assets/images/shapes/services-v1-shape1.png" alt="#"></div>
-            <div class="shape3 float-bob-y"><img src="assets/images/shapes/services-v1-shape2.png" alt="#"></div>
-            <div class="shape4"><img src="assets/images/shapes/services-v1-shape3.png" alt="#"></div>
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <div class="sub-title">
-                        <h6>OUR FOCUS AREAS</h6>
-                    </div>
-                    <h2>Key Initiatives for a <br>Better Kenya</h2>
-                </div>
-                <div class="row">
-                    <!--Start Services Style1 Single-->
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInLeft" data-wow-delay="0ms"
-                        data-wow-duration="1000ms">
-                        <div class="services-style1__single">
-                            <div class="services-style1__single-content text-center">
-                                <div class="services-style1__single-icon">
-                                    <span class="icon-Group-5"></span>
-                                </div>
-                                <div class="services-style1__single-text">
-                                    <h3><a href="departments-details.html">Economic <br> Development</a></h3>
-                                    <div class="btn-box">
-                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Services Style1 Single-->
-
-                    <!--Start Services Style1 Single-->
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInLeft" data-wow-delay="100ms"
-                        data-wow-duration="1000ms">
-                        <div class="services-style1__single">
-                            <div class="services-style1__single-content text-center">
-                                <div class="services-style1__single-icon">
-                                    <span class="icon-Group-6"></span>
-                                </div>
-                                <div class="services-style1__single-text">
-                                    <h3><a href="departments-details.html">Education <br> Reform</a></h3>
-                                    <div class="btn-box">
-                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Services Style1 Single-->
-
-                    <!--Start Services Style1 Single-->
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="0ms"
-                        data-wow-duration="1000ms">
-                        <div class="services-style1__single">
-                            <div class="services-style1__single-content text-center">
-                                <div class="services-style1__single-icon">
-                                    <span class="icon-Group-7"></span>
-                                </div>
-                                <div class="services-style1__single-text">
-                                    <h3><a href="departments-details.html">Healthcare <br> Improvement</a></h3>
-                                    <div class="btn-box">
-                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Services Style1 Single-->
-
-                    <!--Start Services Style1 Single-->
-                    <div class="col-xl-3 col-lg-3 col-md-6 wow fadeInRight" data-wow-delay="100ms"
-                        data-wow-duration="1000ms">
-                        <div class="services-style1__single">
-                            <div class="services-style1__single-content text-center">
-                                <div class="services-style1__single-icon">
-                                    <span class="icon-Group-16"></span>
-                                </div>
-                                <div class="services-style1__single-text">
-                                    <h3><a href="departments-details.html">Environmental <br> Conservation</a></h3>
-                                    <div class="btn-box">
-                                        <a href="departments-details.html"><span class="icon-right-arrow"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Services Style1 Single-->
-                </div>
-            </div>
-        </section>
-        <!--End Services Style1-->
-
-        <!--Start Testimonials Style1-->
-        <section class="testimonials-style1">
-            <div class="shape1"></div>
-            <div class="shape2 rotate-m"><img src="assets/images/shapes/services-v1-shape1.png" alt=""></div>
-            <div class="shape3 wow slideInRight" data-wow-delay="500ms" data-wow-duration="2500ms"><img
-                    class="float-bob-y" src="assets/images/shapes/testimonials-v1-shape2.png" alt=""></div>
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <div class="sub-title">
-                        <h6>Testimonials</h6>
-                    </div>
-                    <h2>What Kenyans Say About <br>Kenya Great Party</h2>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="testimonials-style1__inner">
-                            <div class="owl-carousel owl-theme thm-owl__carousel testimonial-carousel-one"
-                                data-owl-options='{
-                                "loop": true,
-                                "autoplay": true,
-                                "margin": 30,
-                                "nav": false,
-                                "dots": false,
-                                "smartSpeed": 500,
-                                "autoplayTimeout": 10000,
-                                "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-                                "responsive": {
-                                        "0": {
-                                            "items": 1
-                                        },
-                                        "768": {
-                                            "items": 2
-                                        },
-                                        "992": {
-                                            "items": 2
-                                        },
-                                        "1200": {
-                                            "items": 3
-                                        }
-                                    }
-                                }'>
-
-                                <!--Start Testimonials Style1 Single-->
-                                <div class="testimonials-style1__single">
-                                    <div class="testimonials-style1__single-content">
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="text">
-                                            <p>"KGP's commitment to education has opened new opportunities for our youth. Their policies are making a real difference in our communities."</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testimonials-style1__single-client-info">
-                                        <div class="img-box">
-                                            <img src="assets/images/testimonial/testimonial-v1-1.jpg" alt="#">
-                                        </div>
-
-                                        <div class="text-box">
-                                            <h3>phyliss mutheu</h3>
-                                            <p>Teacher</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonials Style1 Single-->
-
-                                <!--Start Testimonials Style1 Single-->
-                                <div class="testimonials-style1__single">
-                                    <div class="testimonials-style1__single-content">
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="text">
-                                            <p>"The economic policies of KGP have created new opportunities for small businesses like mine. They truly understand our needs and challenges."</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testimonials-style1__single-client-info">
-                                        <div class="img-box">
-                                            <img src="assets/images/testimonial/testimonial-v1-2.jpg" alt="#">
-                                        </div>
-
-                                        <div class="text-box">
-                                            <h3>John Kamau</h3>
-                                            <p>Small Business Owner</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonials Style1 Single-->
-
-                                <!--Start Testimonials Style1 Single-->
-                                <div class="testimonials-style1__single">
-                                    <div class="testimonials-style1__single-content">
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="text">
-                                            <p>"I've seen real improvements in healthcare since KGP took office. Their focus on improving medical services is making a difference in people's lives."</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testimonials-style1__single-client-info">
-                                        <div class="img-box">
-                                            <img src="assets/images/testimonial/testimonial-v1-3.jpg" alt="#">
-                                        </div>
-
-                                        <div class="text-box">
-                                            <h3>David Mutua</h3>
-                                            <p>Healthcare Worker</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonials Style1 Single-->
-
-                                <!--Start Testimonials Style1 Single-->
-                                <div class="testimonials-style1__single">
-                                    <div class="testimonials-style1__single-content">
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="text">
-                                            <p>"KGP's emphasis on supporting small businesses, including salons, is creating jobs and enhancing the financial well-being of our community."</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testimonials-style1__single-client-info">
-                                        <div class="img-box">
-                                            <img src="assets/images/testimonial/testimonial-v3-2.jpg" alt="#">
-                                        </div>
-
-                                        <div class="text-box">
-                                            <h3>Pauline Atieno</h3>
-                                            <p>Salonist</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonials Style1 Single-->
-
-                                <!--Start Testimonials Style1 Single-->
-                                <div class="testimonials-style1__single">
-                                    <div class="testimonials-style1__single-content">
-                                        <div class="rating-box">
-                                            <ul>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                                <li>
-                                                    <span class="icon-pointed-star"></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="text">
-                                            <p>"I’ve witnessed significant changes in our community. Their commitment to enhancing education and skills training is empowering every Kenyan citizen."</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="testimonials-style1__single-client-info">
-                                        <div class="img-box">
-                                            <img src="assets/images/testimonial/testimonial-v3-img1.png" alt="#">
-                                        </div>
-
-                                        <div class="text-box">
-                                            <h3>Brandon Mulamwah</h3>
-                                            <p>Student Uon</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Testimonials Style1 Single-->
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Testimonials Style1-->
-
-
-        <!--Start Events Style1-->
-        <section class="events-style1">
-            <div class="events-style1__bg" style="background-image: url(assets/images/backgrounds/events-v1-bg.png);">
-            </div>
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <div class="sub-title">
-                        <h6>Upcoming Events</h6>
-                    </div>
-                    <h2>Join Us in Shaping <br>Kenya's Future</h2>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="events-style1__inner">
-                            <!--Start Events Style1 Single-->
-                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.1s">
-                                <div class="events-style1__single-left">
-                                    <div class="img-box">
-                                        <img src="assets/images/resources/events-v1-img1.jpg" alt="#">
-                                    </div>
-                                    <div class="title">
-                                        <h2><a href="event-details.html">KGP Youth Summit: <br> Empowering Tomorrow's Leaders</a>
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div class="events-style1__single__right">
-                                    <ul class="contact-info">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-wall-clock"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>09:00 AM - 05:00 PM</p>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-pin"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>Nairobi, Kenya</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="events-style1__single__right-btn">
-                                        <a class="btn-one" href="event-details.html">
-                                            <span class="txt">Read More</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Events Style1 Single-->
-
-                            <!--Start Events Style1 Single-->
-                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.2s">
-                                <div class="events-style1__single-left">
-                                    <div class="img-box">
-                                        <img src="assets/images/resources/events-v1-img2.jpg" alt="#">
-                                    </div>
-                                    <div class="title">
-                                        <h2><a href="event-details.html">Economic Forum: <br> Building a Prosperous Kenya</a></h2>
-                                    </div>
-                                </div>
-
-                                <div class="events-style1__single__right">
-                                    <ul class="contact-info">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-wall-clock"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>10:00 AM - 04:00 PM</p>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-pin"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>Mombasa, Kenya</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="events-style1__single__right-btn">
-                                        <a class="btn-one" href="event-details.html">
-                                            <span class="txt">Read More</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Events Style1 Single-->
-
-                            <!--Start Events Style1 Single-->
-                            <div class="events-style1__single wow animated fadeInUp" data-wow-delay="0.3s">
-                                <div class="events-style1__single-left">
-                                    <div class="img-box">
-                                        <img src="assets/images/resources/events-v1-img3.jpg" alt="#">
-                                    </div>
-                                    <div class="title">
-                                        <h2><a href="event-details.html">Healthcare Symposium: <br> Advancing Medical Care in Kenya</a></h2>
-                                    </div>
-                                </div>
-
-                                <div class="events-style1__single__right">
-                                    <ul class="contact-info">
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-wall-clock"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>08:30 AM - 03:30 PM</p>
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="icon">
-                                                <span class="icon-pin"></span>
-                                            </div>
-                                            <div class="text">
-                                                <p>Kisumu, Kenya</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="events-style1__single__right-btn">
-                                        <a class="btn-one" href="event-details.html">
-                                            <span class="txt">Read More</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Events Style1 Single-->
-                            <div class="events-style1__btn text-center">
-                                <a class="btn-one" href="events.html">
-                                    <span class="txt">View All Events</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Events Style1-->
-
-        <!--Start Blog Style1-->
-        <section class="blog-style1">
-            <div class="shape1"><img src="assets/images/shapes/blog-v1-shape1.png" alt="#"></div>
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <div class="sub-title">
-                        <h6>Latest News</h6>
-                    </div>
-                    <h2>Stay Informed with KGP's <br> Latest Updates</h2>
-                </div>
-                <div class="row">
-                    <!--Start Blog Style1 Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp  h-100" data-wow-delay=".3s">
-                        <div class="blog-style1__single">
-                            <div class="blog-style1__single-img">
-                                <img src="assets/images/blog/blog-v1-1.jpg" alt="#">
-                            </div>
-
-                            <div class="blog-style1__single-content">
-                                <div class="date-box">
-                                    <p> <span class="icon-calendar"></span> Oct 20, 2024</p>
-                                </div>
-                                <h2><a href="blog-details.html">KGP Launches New Education Initiative</a>
-                                </h2>
-                                <ul class="meta-box">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-user"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">Admin</a></p>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-comment"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">2 Comments</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="text">
-                                    <p>Our party introduces a comprehensive plan to improve access to quality education across Kenya.</p>
-                                </div>
-                                <div class="blog-style1__single-conten-btn">
-                                    <a class="btn-one" href="blog-details.html">
-                                        <span class="txt">Read More</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Blog Style1 Single-->
-
-                    <!--Start Blog Style1 Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInDown  h-100" data-wow-delay=".3s">
-                        <div class="blog-style1__single">
-                            <div class="blog-style1__single-img">
-                                <img src="assets/images/blog/blog-v1-2.jpg" alt="#">
-                            </div>
-
-                            <div class="blog-style1__single-content">
-                                <div class="date-box">
-                                    <p> <span class="icon-calendar"></span> Oct 18, 2024</p>
-                                </div>
-                                <h2><a href="blog-details.html">Economic Growth Surges Under KGP Policies</a></h2>
-                                <ul class="meta-box">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-user"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">Admin</a></p>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-comment"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">4 Comments</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="text">
-                                    <p>Recent reports show significant improvements in Kenya's economic indicators following KGP's reforms.</p>
-                                </div>
-                                <div class="blog-style1__single-conten-btn">
-                                    <a class="btn-one" href="blog-details.html">
-                                        <span class="txt">Read More</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Blog Style1 Single-->
-
-                    <!--Start Blog Style1 Single-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp  h-100" data-wow-delay=".3s">
-                        <div class="blog-style1__single">
-                            <div class="blog-style1__single-img">
-                                <img src="assets/images/blog/blog-v1-3.jpg" alt="#">
-                            </div>
-
-                            <div class="blog-style1__single-content">
-                                <div class="date-box">
-                                    <p> <span class="icon-calendar"></span> Oct 15, 2024</p>
-                                </div>
-                                <h2><a href="blog-details.html">KGP Hosts National Unity Conference</a>
-                                </h2>
-                                <ul class="meta-box">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-user"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">Admin</a></p>
-                                        </div>
-                                    </li>
-
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-comment"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p><a href="#">1 Comment</a></p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="text">
-                                    <p>Leaders from across Kenya gather to discuss strategies for promoting national unity and cohesion.</p>
-                                </div>
-                                <div class="blog-style1__single-conten-btn">
-                                    <a class="btn-one" href="blog-details.html">
-                                        <span class="txt">Read More</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Blog Style1 Single-->
-                </div>
-            </div>
-        </section>
-        <!--End Blog Style1-->
+        <!-- Dynamic content will be loaded here -->
+        <div id="dynamic-content">
+            <!-- Content will be loaded via JavaScript -->
+        </div>
 
         <!--Start Team Style1-->
         <section class="team-style1">
@@ -1166,7 +445,7 @@
                                 <div class="inner-box">
                                     <div class="round-bg"></div>
                                     <h2><a href="team-details.html">Halima Hassan</a></h2>
-                                    <p>Sectetary General</p>
+                                    <p>Secretary General</p>
                                 </div>
                             </div>
                         </div>
@@ -1277,6 +556,164 @@
                 </div>
             </div>
         </section>
+        <!--End Team Style1-->
+
+        <!--Start FAQ Section-->
+        <section class="faq-section py-5">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="text-center mb-5">
+                            <h2 class="mb-3">Frequently Asked Questions</h2>
+                            <p class="text-muted">Find answers to common questions about the Kenya Great Party</p>
+                        </div>
+
+                        <!-- Membership FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Membership</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How do I become a member of the Kenya Great Party?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To become a member, you need to:</p>
+                                    <ul>
+                                        <li>Fill out the membership application form on our website</li>
+                                        <li>Provide valid identification documents</li>
+                                        <li>Pay the required membership fee</li>
+                                        <li>Complete the verification process</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>What are the membership fees?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Membership fees are as follows:</p>
+                                    <ul>
+                                        <li>Ordinary Member: KSh 100/year</li>
+                                        <li>Youth Member (18-35): KSh 50/year</li>
+                                        <li>Student Member: KSh 25/year</li>
+                                        <li>Life Member: KSh 5,000 (one-time)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I check my membership status?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can check your membership status by:</p>
+                                    <ul>
+                                        <li>Visiting our membership status page</li>
+                                        <li>Entering your ID number and phone number</li>
+                                        <li>Contacting our membership office directly</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How do I resign from the party?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To resign from the party, you can:</p>
+                                    <ul>
+                                        <li>Submit a resignation request through our website</li>
+                                        <li>Visit any KGP office with your ID</li>
+                                        <li>Send a written resignation letter to our headquarters</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Party Activities FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Party Activities</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I participate in party activities?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>As a member, you can participate in various ways:</p>
+                                    <ul>
+                                        <li>Attend local branch meetings</li>
+                                        <li>Volunteer for party events and campaigns</li>
+                                        <li>Join specialized committees</li>
+                                        <li>Participate in policy discussions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How often are party meetings held?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Party meetings are held at different levels:</p>
+                                    <ul>
+                                        <li>Local branch meetings: Monthly</li>
+                                        <li>County meetings: Quarterly</li>
+                                        <li>National meetings: Annually</li>
+                                        <li>Special meetings: As needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact FAQ -->
+                        <div class="faq-category mb-5">
+                            <h4 class="mb-4 text-primary">Contact & Support</h4>
+                            
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>How can I contact the party leadership?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can contact the party leadership through:</p>
+                                    <ul>
+                                        <li>Email: info@kenyagreatparty.org</li>
+                                        <li>Phone: +254 20 123 4567</li>
+                                        <li>Visit our headquarters in Nairobi</li>
+                                        <li>Contact your local branch office</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="faq-item mb-3">
+                                <button class="faq-question" onclick="toggleFAQ(this)">
+                                    <span>Where are the party offices located?</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>We have offices in:</p>
+                                    <ul>
+                                        <li>Nairobi (Headquarters)</li>
+                                        <li>Mombasa</li>
+                                        <li>Kisumu</li>
+                                        <li>Nakuru</li>
+                                        <li>Eldoret</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End FAQ Section-->
 
         <!--Start footer area -->
         <footer class="footer-area">
@@ -1292,8 +729,8 @@
                             <div class="single-footer-widget">
                                 <div class="our-company-info">
                                     <div class="footer-logo-style1">
-                                        <a href="index.html">
-                                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" title="" width="100">
+                                        <a href="/">
+                                            <img src="assets/images/favicons/kgp2-upright.png" alt="KGP Logo" title="" width="100">
                                         </a>
                                     </div>
                                     <div class="our-company-info__text">
@@ -1323,11 +760,11 @@
                                 </div>
                                 <div class="footer-widget-links">
                                     <ul>
-                                        <li><a href="#">About KGP</a></li>
+                                        <li><a href="/about.html">About KGP</a></li>
                                         <li><a href="#">Our Manifesto</a></li>
                                         <li><a href="#">Leadership Team</a></li>
-                                        <li><a href="#">News & Updates</a></li>
-                                        <li><a href="#">Get Involved</a></li>
+                                        <li><a href="/news.html">News & Updates</a></li>
+                                        <li><a href="/join.html">Get Involved</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1346,7 +783,7 @@
                                         <li><a href="#">Donate</a></li>
                                         <li><a href="#">Events Calendar</a></li>
                                         <li><a href="#">FAQs</a></li>
-                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="/contact.html">Contact Us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1409,59 +846,10 @@
                     </div>
                 </div>
             </div>
-
         </footer>
         <!--End footer area-->
-
     </div>
     <!-- /.page-wrapper -->
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler">
-                <i class="icon-plus"></i>
-            </span>
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/j24O3CgdoQzOGexpuyIsH-transformed-LWW8KAL0bL7BObVK5UEBMRHJqgsAvM.png" alt="KGP Logo" width="80" />
-                </a>
-            </div>
-            <div class="mobile-nav__container"></div>
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:info@kenyagreatparty.com">info@kenyagreatparty.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:+254123456789">+254 729554475</a>
-                </li>
-            </ul>
-            <div class="mobile-nav__social">
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-facebook-square"></a>
-                <a href="#" class="fab fa-instagram"></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <div class="search-popup__content">
-            <form action="#">
-                <label for="search" class="sr-only">search here</label>
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="thm-btn">
-                    <i class="icon-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
-        <i class="icon-down-arrow"></i>
-    </a>
 
     <script src="assets/vendors/jquery/jquery-3.6.0.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1493,6 +881,10 @@
     <!-- Template js -->
     <script src="assets/js/custom.js"></script>
 
+    <!-- API Integration Script -->
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const header = document.querySelector('.floating-header');
@@ -1503,9 +895,110 @@
                     header.classList.remove('scrolled');
                 }
             });
+
+            // Search functionality
+            const searchBtn = document.getElementById('searchBtn');
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+            const searchResultsList = document.getElementById('searchResultsList');
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            async function performSearch() {
+                const query = searchInput.value.trim();
+                if (!query) {
+                    alert('Please enter a search term');
+                    return;
+                }
+
+                const searchTypes = [];
+                if (document.getElementById('searchNews').checked) searchTypes.push('news');
+                if (document.getElementById('searchPolicies').checked) searchTypes.push('policies');
+                if (document.getElementById('searchDownloads').checked) searchTypes.push('downloads');
+
+                const dateRange = document.getElementById('dateRange').value;
+                const sortBy = document.getElementById('sortBy').value;
+
+                try {
+                    searchBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching...';
+                    searchBtn.disabled = true;
+
+                    const response = await fetch('/api/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            query,
+                            types: searchTypes,
+                            dateRange,
+                            sortBy
+                        })
+                    });
+
+                    const results = await response.json();
+                    displaySearchResults(results);
+                } catch (error) {
+                    console.error('Search error:', error);
+                    searchResultsList.innerHTML = '<div class="alert alert-danger">Error performing search. Please try again.</div>';
+                    searchResults.style.display = 'block';
+                } finally {
+                    searchBtn.innerHTML = '<i class="fas fa-search"></i> Search';
+                    searchBtn.disabled = false;
+                }
+            }
+
+            function displaySearchResults(results) {
+                if (results.length === 0) {
+                    searchResultsList.innerHTML = '<div class="alert alert-info">No results found for your search.</div>';
+                } else {
+                    let html = '<div class="list-group">';
+                    results.forEach(result => {
+                        html += `
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">${result.title}</h6>
+                                    <small class="text-muted">${new Date(result.date).toLocaleDateString()}</small>
+                                </div>
+                                <p class="mb-1">${result.excerpt}</p>
+                                <small class="text-muted">Type: ${result.type} | <a href="${result.url}" class="text-primary">Read more</a></small>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                    searchResultsList.innerHTML = html;
+                }
+                searchResults.style.display = 'block';
+            }
+
+            // FAQ Toggle Function
+            function toggleFAQ(button) {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer) {
+                        item.classList.remove('show');
+                    }
+                });
+                
+                document.querySelectorAll('.faq-question i').forEach(icon => {
+                    if (icon !== button.querySelector('i')) {
+                        icon.classList.remove('rotated');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                answer.classList.toggle('show');
+                icon.classList.toggle('rotated');
+            }
         });
     </script>
-
 </body>
-
 </html>
